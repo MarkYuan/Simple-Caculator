@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4E55B6971E51946E00324D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E55B6961E51946E00324D05 /* LaunchScreen.storyboard */; };
-		4EB58E841E4CB54E001345B4 /* WTICoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB58E831E4CB54E001345B4 /* WTICoverView.m */; };
+		4E6B08331E607AF700309132 /* WTICaculatorStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B08261E607AF700309132 /* WTICaculatorStore.m */; };
+		4E6B08351E607AF700309132 /* WTIMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B082A1E607AF700309132 /* WTIMainViewController.m */; };
+		4E6B08361E607AF700309132 /* WTIMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E6B082B1E607AF700309132 /* WTIMainViewController.xib */; };
+		4E6B08371E607AF700309132 /* WTIRGBEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B082D1E607AF700309132 /* WTIRGBEngine.m */; };
+		4E6B08381E607AF700309132 /* WTISettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B082F1E607AF700309132 /* WTISettingViewController.m */; };
+		4E6B08391E607AF700309132 /* WTISettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E6B08301E607AF700309132 /* WTISettingViewController.xib */; };
+		4E6B083A1E607AF700309132 /* WTISimpleOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B08321E607AF700309132 /* WTISimpleOperation.m */; };
+		4E6B08401E607B0300309132 /* Caculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B083D1E607B0300309132 /* Caculator.m */; };
+		4E6B08411E607B0300309132 /* Operator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B083F1E607B0300309132 /* Operator.m */; };
+		4E6B08441E607B3100309132 /* WTISimpleExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B08431E607B3100309132 /* WTISimpleExpression.m */; };
+		4E6B08471E607B7D00309132 /* WTICoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B08461E607B7D00309132 /* WTICoverView.m */; };
 		4ED310301E4C46EC0042518D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3102F1E4C46EC0042518D /* main.m */; };
 		4ED310331E4C46EC0042518D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310321E4C46EC0042518D /* AppDelegate.m */; };
 		4ED3103B1E4C46EC0042518D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED3103A1E4C46EC0042518D /* Assets.xcassets */; };
 		4ED310491E4C46EC0042518D /* Simple_CaculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310481E4C46EC0042518D /* Simple_CaculatorTests.m */; };
 		4ED310541E4C46EC0042518D /* Simple_CaculatorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310531E4C46EC0042518D /* Simple_CaculatorUITests.m */; };
-		4ED310751E4C47E80042518D /* Caculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310631E4C47E80042518D /* Caculator.m */; };
-		4ED310761E4C47E80042518D /* Operator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310651E4C47E80042518D /* Operator.m */; };
-		4ED310771E4C47E80042518D /* WTIRGBEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310681E4C47E80042518D /* WTIRGBEngine.m */; };
-		4ED310781E4C47E80042518D /* WTISimpleExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3106A1E4C47E80042518D /* WTISimpleExpression.m */; };
-		4ED310791E4C47E80042518D /* WTISimpleOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3106C1E4C47E80042518D /* WTISimpleOperation.m */; };
-		4ED3107A1E4C47E80042518D /* WTICaculatorStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3106E1E4C47E80042518D /* WTICaculatorStore.m */; };
-		4ED3107B1E4C47E80042518D /* WTISettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310701E4C47E80042518D /* WTISettingViewController.m */; };
-		4ED3107C1E4C47E80042518D /* WTISettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ED310711E4C47E80042518D /* WTISettingViewController.xib */; };
-		4ED3107D1E4C47E80042518D /* WTIMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310731E4C47E80042518D /* WTIMainViewController.m */; };
-		4ED3107E1E4C47E80042518D /* WTIMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ED310741E4C47E80042518D /* WTIMainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +45,26 @@
 
 /* Begin PBXFileReference section */
 		4E55B6961E51946E00324D05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4EB58E821E4CB54E001345B4 /* WTICoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTICoverView.h; sourceTree = "<group>"; };
-		4EB58E831E4CB54E001345B4 /* WTICoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTICoverView.m; sourceTree = "<group>"; };
+		4E6B08251E607AF700309132 /* WTICaculatorStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTICaculatorStore.h; sourceTree = "<group>"; };
+		4E6B08261E607AF700309132 /* WTICaculatorStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTICaculatorStore.m; sourceTree = "<group>"; };
+		4E6B08291E607AF700309132 /* WTIMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTIMainViewController.h; sourceTree = "<group>"; };
+		4E6B082A1E607AF700309132 /* WTIMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTIMainViewController.m; sourceTree = "<group>"; };
+		4E6B082B1E607AF700309132 /* WTIMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WTIMainViewController.xib; sourceTree = "<group>"; };
+		4E6B082C1E607AF700309132 /* WTIRGBEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTIRGBEngine.h; sourceTree = "<group>"; };
+		4E6B082D1E607AF700309132 /* WTIRGBEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTIRGBEngine.m; sourceTree = "<group>"; };
+		4E6B082E1E607AF700309132 /* WTISettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTISettingViewController.h; sourceTree = "<group>"; };
+		4E6B082F1E607AF700309132 /* WTISettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTISettingViewController.m; sourceTree = "<group>"; };
+		4E6B08301E607AF700309132 /* WTISettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WTISettingViewController.xib; sourceTree = "<group>"; };
+		4E6B08311E607AF700309132 /* WTISimpleOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTISimpleOperation.h; sourceTree = "<group>"; };
+		4E6B08321E607AF700309132 /* WTISimpleOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTISimpleOperation.m; sourceTree = "<group>"; };
+		4E6B083C1E607B0300309132 /* Caculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caculator.h; sourceTree = "<group>"; };
+		4E6B083D1E607B0300309132 /* Caculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caculator.m; sourceTree = "<group>"; };
+		4E6B083E1E607B0300309132 /* Operator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operator.h; sourceTree = "<group>"; };
+		4E6B083F1E607B0300309132 /* Operator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operator.m; sourceTree = "<group>"; };
+		4E6B08421E607B3100309132 /* WTISimpleExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTISimpleExpression.h; sourceTree = "<group>"; };
+		4E6B08431E607B3100309132 /* WTISimpleExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTISimpleExpression.m; sourceTree = "<group>"; };
+		4E6B08451E607B7D00309132 /* WTICoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTICoverView.h; sourceTree = "<group>"; };
+		4E6B08461E607B7D00309132 /* WTICoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTICoverView.m; sourceTree = "<group>"; };
 		4ED3102B1E4C46EC0042518D /* Simple Caculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Caculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED3102F1E4C46EC0042518D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4ED310311E4C46EC0042518D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,24 +78,6 @@
 		4ED310531E4C46EC0042518D /* Simple_CaculatorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Simple_CaculatorUITests.m; sourceTree = "<group>"; };
 		4ED310551E4C46EC0042518D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ED310611E4C47D50042518D /* Setting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
-		4ED310621E4C47E80042518D /* Caculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caculator.h; sourceTree = "<group>"; };
-		4ED310631E4C47E80042518D /* Caculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caculator.m; sourceTree = "<group>"; };
-		4ED310641E4C47E80042518D /* Operator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operator.h; sourceTree = "<group>"; };
-		4ED310651E4C47E80042518D /* Operator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operator.m; sourceTree = "<group>"; };
-		4ED310671E4C47E80042518D /* WTIRGBEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTIRGBEngine.h; path = ../../Caculator/Caculator/WTIRGBEngine.h; sourceTree = "<group>"; };
-		4ED310681E4C47E80042518D /* WTIRGBEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTIRGBEngine.m; path = ../../Caculator/Caculator/WTIRGBEngine.m; sourceTree = "<group>"; };
-		4ED310691E4C47E80042518D /* WTISimpleExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTISimpleExpression.h; path = ../../Caculator/Caculator/Assets.xcassets/WTISimpleExpression.h; sourceTree = "<group>"; };
-		4ED3106A1E4C47E80042518D /* WTISimpleExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTISimpleExpression.m; path = ../../Caculator/Caculator/Assets.xcassets/WTISimpleExpression.m; sourceTree = "<group>"; };
-		4ED3106B1E4C47E80042518D /* WTISimpleOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTISimpleOperation.h; path = ../../Caculator/Caculator/WTISimpleOperation.h; sourceTree = "<group>"; };
-		4ED3106C1E4C47E80042518D /* WTISimpleOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTISimpleOperation.m; path = ../../Caculator/Caculator/WTISimpleOperation.m; sourceTree = "<group>"; };
-		4ED3106D1E4C47E80042518D /* WTICaculatorStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTICaculatorStore.h; path = ../../Caculator/Caculator/WTICaculatorStore.h; sourceTree = "<group>"; };
-		4ED3106E1E4C47E80042518D /* WTICaculatorStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTICaculatorStore.m; path = ../../Caculator/Caculator/WTICaculatorStore.m; sourceTree = "<group>"; };
-		4ED3106F1E4C47E80042518D /* WTISettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTISettingViewController.h; path = ../../Caculator/Caculator/WTISettingViewController.h; sourceTree = "<group>"; };
-		4ED310701E4C47E80042518D /* WTISettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTISettingViewController.m; path = ../../Caculator/Caculator/WTISettingViewController.m; sourceTree = "<group>"; };
-		4ED310711E4C47E80042518D /* WTISettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WTISettingViewController.xib; path = ../../Caculator/Caculator/WTISettingViewController.xib; sourceTree = "<group>"; };
-		4ED310721E4C47E80042518D /* WTIMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTIMainViewController.h; path = ../../Caculator/Caculator/WTIMainViewController.h; sourceTree = "<group>"; };
-		4ED310731E4C47E80042518D /* WTIMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTIMainViewController.m; path = ../../Caculator/Caculator/WTIMainViewController.m; sourceTree = "<group>"; };
-		4ED310741E4C47E80042518D /* WTIMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WTIMainViewController.xib; path = ../../Caculator/Caculator/WTIMainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +105,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E6B083B1E607B0300309132 /* Caculator */ = {
+			isa = PBXGroup;
+			children = (
+				4E6B083C1E607B0300309132 /* Caculator.h */,
+				4E6B083D1E607B0300309132 /* Caculator.m */,
+				4E6B083E1E607B0300309132 /* Operator.h */,
+				4E6B083F1E607B0300309132 /* Operator.m */,
+			);
+			path = Caculator;
+			sourceTree = "<group>";
+		};
 		4ED310221E4C46EC0042518D = {
 			isa = PBXGroup;
 			children = (
@@ -128,23 +139,23 @@
 		4ED3102D1E4C46EC0042518D /* Simple Caculator */ = {
 			isa = PBXGroup;
 			children = (
-				4ED310661E4C47E80042518D /* Caculator */,
-				4ED310671E4C47E80042518D /* WTIRGBEngine.h */,
-				4ED310681E4C47E80042518D /* WTIRGBEngine.m */,
-				4ED310691E4C47E80042518D /* WTISimpleExpression.h */,
-				4ED3106A1E4C47E80042518D /* WTISimpleExpression.m */,
-				4ED3106B1E4C47E80042518D /* WTISimpleOperation.h */,
-				4ED3106C1E4C47E80042518D /* WTISimpleOperation.m */,
-				4ED3106D1E4C47E80042518D /* WTICaculatorStore.h */,
-				4ED3106E1E4C47E80042518D /* WTICaculatorStore.m */,
-				4ED3106F1E4C47E80042518D /* WTISettingViewController.h */,
-				4ED310701E4C47E80042518D /* WTISettingViewController.m */,
-				4ED310711E4C47E80042518D /* WTISettingViewController.xib */,
-				4ED310721E4C47E80042518D /* WTIMainViewController.h */,
-				4ED310731E4C47E80042518D /* WTIMainViewController.m */,
-				4ED310741E4C47E80042518D /* WTIMainViewController.xib */,
-				4EB58E821E4CB54E001345B4 /* WTICoverView.h */,
-				4EB58E831E4CB54E001345B4 /* WTICoverView.m */,
+				4E6B083B1E607B0300309132 /* Caculator */,
+				4E6B082C1E607AF700309132 /* WTIRGBEngine.h */,
+				4E6B082D1E607AF700309132 /* WTIRGBEngine.m */,
+				4E6B08311E607AF700309132 /* WTISimpleOperation.h */,
+				4E6B08321E607AF700309132 /* WTISimpleOperation.m */,
+				4E6B08421E607B3100309132 /* WTISimpleExpression.h */,
+				4E6B08431E607B3100309132 /* WTISimpleExpression.m */,
+				4E6B08251E607AF700309132 /* WTICaculatorStore.h */,
+				4E6B08261E607AF700309132 /* WTICaculatorStore.m */,
+				4E6B082E1E607AF700309132 /* WTISettingViewController.h */,
+				4E6B082F1E607AF700309132 /* WTISettingViewController.m */,
+				4E6B08301E607AF700309132 /* WTISettingViewController.xib */,
+				4E6B08291E607AF700309132 /* WTIMainViewController.h */,
+				4E6B082A1E607AF700309132 /* WTIMainViewController.m */,
+				4E6B082B1E607AF700309132 /* WTIMainViewController.xib */,
+				4E6B08451E607B7D00309132 /* WTICoverView.h */,
+				4E6B08461E607B7D00309132 /* WTICoverView.m */,
 				4ED3102E1E4C46EC0042518D /* Supporting Files */,
 			);
 			path = "Simple Caculator";
@@ -180,18 +191,6 @@
 				4ED310551E4C46EC0042518D /* Info.plist */,
 			);
 			path = "Simple CaculatorUITests";
-			sourceTree = "<group>";
-		};
-		4ED310661E4C47E80042518D /* Caculator */ = {
-			isa = PBXGroup;
-			children = (
-				4ED310621E4C47E80042518D /* Caculator.h */,
-				4ED310631E4C47E80042518D /* Caculator.m */,
-				4ED310641E4C47E80042518D /* Operator.h */,
-				4ED310651E4C47E80042518D /* Operator.m */,
-			);
-			name = Caculator;
-			path = ../../Caculator/Caculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,9 +297,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ED3107C1E4C47E80042518D /* WTISettingViewController.xib in Resources */,
-				4ED3107E1E4C47E80042518D /* WTIMainViewController.xib in Resources */,
 				4E55B6971E51946E00324D05 /* LaunchScreen.storyboard in Resources */,
+				4E6B08361E607AF700309132 /* WTIMainViewController.xib in Resources */,
+				4E6B08391E607AF700309132 /* WTISettingViewController.xib in Resources */,
 				4ED3103B1E4C46EC0042518D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,17 +325,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6B08401E607B0300309132 /* Caculator.m in Sources */,
 				4ED310331E4C46EC0042518D /* AppDelegate.m in Sources */,
-				4EB58E841E4CB54E001345B4 /* WTICoverView.m in Sources */,
-				4ED310761E4C47E80042518D /* Operator.m in Sources */,
-				4ED310771E4C47E80042518D /* WTIRGBEngine.m in Sources */,
+				4E6B08331E607AF700309132 /* WTICaculatorStore.m in Sources */,
+				4E6B08371E607AF700309132 /* WTIRGBEngine.m in Sources */,
+				4E6B08351E607AF700309132 /* WTIMainViewController.m in Sources */,
+				4E6B08381E607AF700309132 /* WTISettingViewController.m in Sources */,
+				4E6B08471E607B7D00309132 /* WTICoverView.m in Sources */,
 				4ED310301E4C46EC0042518D /* main.m in Sources */,
-				4ED3107D1E4C47E80042518D /* WTIMainViewController.m in Sources */,
-				4ED310791E4C47E80042518D /* WTISimpleOperation.m in Sources */,
-				4ED3107A1E4C47E80042518D /* WTICaculatorStore.m in Sources */,
-				4ED310781E4C47E80042518D /* WTISimpleExpression.m in Sources */,
-				4ED310751E4C47E80042518D /* Caculator.m in Sources */,
-				4ED3107B1E4C47E80042518D /* WTISettingViewController.m in Sources */,
+				4E6B083A1E607AF700309132 /* WTISimpleOperation.m in Sources */,
+				4E6B08441E607B3100309132 /* WTISimpleExpression.m in Sources */,
+				4E6B08411E607B0300309132 /* Operator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

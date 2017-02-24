@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WTIMainViewController">
+            <connections>
+                <outlet property="backView" destination="XkG-bc-yeK" id="N2q-63-LmJ"/>
+                <outlet property="bracketButton" destination="oxa-mH-gV3" id="wZz-gk-IyC"/>
+                <outlet property="cancelButton" destination="wTS-dL-KJS" id="ss6-by-TnR"/>
+                <outlet property="divideButton" destination="r3s-xH-otf" id="X0f-U3-qM8"/>
+                <outlet property="eightButton" destination="SFG-Yb-3oU" id="SnN-xm-X9l"/>
+                <outlet property="expressionLabel" destination="u2M-9y-BEA" id="Syw-fZ-lGp"/>
+                <outlet property="expressionScrollView" destination="VJa-DZ-arl" id="ysg-c0-iJc"/>
+                <outlet property="fiveButton" destination="deb-H1-GKa" id="JW0-uh-zxs"/>
+                <outlet property="fourButton" destination="1SH-L0-ddF" id="cKz-ox-v3c"/>
+                <outlet property="minusButton" destination="t8k-cq-XP2" id="lOR-gP-gNB"/>
+                <outlet property="multiplyButton" destination="7uj-Vg-C8Z" id="ehT-3J-hZl"/>
+                <outlet property="nineButton" destination="rnp-9x-Vlq" id="Xx8-rt-7Kf"/>
+                <outlet property="oneButton" destination="QHm-Vw-OSj" id="jpi-xo-cSx"/>
+                <outlet property="percentButton" destination="Wt4-Lv-9qP" id="JmB-sT-30v"/>
+                <outlet property="plusButton" destination="cPI-EL-xpd" id="aJd-Qb-Sum"/>
+                <outlet property="pointButton" destination="Dxd-kd-5ol" id="nuY-93-UCt"/>
+                <outlet property="powerButton" destination="aPC-7q-2a8" id="AuW-88-5fY"/>
+                <outlet property="resultCoverView" destination="HPL-qm-ksn" id="KnT-5Q-eC2"/>
+                <outlet property="resultLabel" destination="KEJ-B9-g6d" id="HCf-UQ-3h1"/>
+                <outlet property="seperateLine" destination="PRm-Gs-zBG" id="DQS-xL-lUY"/>
+                <outlet property="settingButton" destination="j1L-VQ-eT3" id="6qk-In-4hJ"/>
+                <outlet property="sevenButton" destination="9bA-0P-szm" id="1Aq-Cp-Jm6"/>
+                <outlet property="sixButton" destination="Ehl-hx-vf1" id="qIp-Pu-O1y"/>
+                <outlet property="squareButton" destination="daQ-QM-qHe" id="Ybt-Ym-UMU"/>
+                <outlet property="threeButton" destination="iqS-XA-bq9" id="Zzs-pn-o3j"/>
+                <outlet property="twoButton" destination="tb0-op-7Ic" id="vYd-sE-VuU"/>
+                <outlet property="view" destination="kHE-PN-9ZE" id="JXc-eR-Noz"/>
+                <outlet property="zeroButton" destination="fnc-h6-whc" id="k0h-Pt-49X"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kHE-PN-9ZE">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" id="XkG-bc-yeK" userLabel="Back View">
+                    <rect key="frame" x="0.0" y="0.0" width="319" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="KEJ-B9-g6d" userLabel="resultLabel">
+                    <rect key="frame" x="1" y="61" width="318" height="75"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.97410297393798828" green="0.98297715187072754" blue="0.94207417964935303" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="75"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fnc-h6-whc">
+                    <rect key="frame" x="1" y="488" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="0" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="ZDs-eb-rjL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QHm-Vw-OSj">
+                    <rect key="frame" x="1" y="408" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="1" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="OIb-M6-zi2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tb0-op-7Ic">
+                    <rect key="frame" x="81" y="408" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="2" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="5hc-e2-m5Y"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iqS-XA-bq9">
+                    <rect key="frame" x="161" y="408" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="3" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="n4m-Df-1P7"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1SH-L0-ddF">
+                    <rect key="frame" x="1" y="328" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="4" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="ID9-TC-ao4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="deb-H1-GKa">
+                    <rect key="frame" x="81" y="328" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="5" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="Px9-Z5-r9F"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="6" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ehl-hx-vf1">
+                    <rect key="frame" x="161" y="328" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="6" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="Ckw-LM-A61"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="7" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9bA-0P-szm">
+                    <rect key="frame" x="1" y="248" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="7" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="2Qv-K6-ejO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SFG-Yb-3oU">
+                    <rect key="frame" x="81" y="248" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="8" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="61l-Zf-2YI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="9" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rnp-9x-Vlq">
+                    <rect key="frame" x="161" y="248" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="9" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="0Zl-wf-Saq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="10" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wTS-dL-KJS">
+                    <rect key="frame" x="1" y="168" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="C" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="s2F-bg-as3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="11" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aPC-7q-2a8">
+                    <rect key="frame" x="81" y="168" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="xⁿ" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="MHT-pG-59d"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="12" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="daQ-QM-qHe">
+                    <rect key="frame" x="161" y="168" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="ⁿ√" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="lRj-g2-lxc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="13" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wt4-Lv-9qP">
+                    <rect key="frame" x="241" y="168" width="78" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="%" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="ufR-ya-KDc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="14" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="r3s-xH-otf">
+                    <rect key="frame" x="241" y="248" width="78" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="÷" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="59b-Pt-kuC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="15" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7uj-Vg-C8Z">
+                    <rect key="frame" x="241" y="328" width="78" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="×" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="teU-jp-83C"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="16" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t8k-cq-XP2">
+                    <rect key="frame" x="241" y="408" width="78" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="−" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="qVK-nP-Vup"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="17" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cPI-EL-xpd">
+                    <rect key="frame" x="241" y="488" width="78" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="+" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="7Mv-JP-ilm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="18" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oxa-mH-gV3">
+                    <rect key="frame" x="161" y="488" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="(" backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="dMN-mL-xJe"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="20" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Dxd-kd-5ol">
+                    <rect key="frame" x="81" y="488" width="79" height="79"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                    <state key="normal" title="." backgroundImage="ButtonBackgroundNormal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="ButtonBackgroundDisabled"/>
+                    <state key="highlighted" backgroundImage="ButtonBackgroundHighlighted"/>
+                    <connections>
+                        <action selector="actionCollection:" destination="-1" eventType="touchUpInside" id="WW3-kF-tXK"/>
+                    </connections>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsVerticalScrollIndicator="NO" id="VJa-DZ-arl">
+                    <rect key="frame" x="0.0" y="137" width="320" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u2M-9y-BEA" userLabel="expressionLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="318" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </scrollView>
+                <button opaque="NO" tag="100" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="j1L-VQ-eT3">
+                    <rect key="frame" x="18" y="18" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="PushSymbolNormal"/>
+                    <connections>
+                        <action selector="pushSettingInterface:" destination="-1" eventType="touchUpInside" id="xl2-Qc-KfE"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" misplaced="YES" id="PRm-Gs-zBG" userLabel="Seperate Line">
+                    <rect key="frame" x="0.0" y="131" width="320" height="1"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" id="HPL-qm-ksn" customClass="WTICoverView">
+                    <rect key="frame" x="0.0" y="61" width="320" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <point key="canvasLocation" x="-216" y="-175"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ButtonBackgroundDisabled" width="1" height="1"/>
+        <image name="ButtonBackgroundHighlighted" width="1" height="1"/>
+        <image name="ButtonBackgroundNormal" width="1" height="1"/>
+        <image name="PushSymbolNormal" width="30" height="30"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
