@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E55B6971E51946E00324D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E55B6961E51946E00324D05 /* LaunchScreen.storyboard */; };
+		4EB58E841E4CB54E001345B4 /* WTICoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB58E831E4CB54E001345B4 /* WTICoverView.m */; };
+		4ED310301E4C46EC0042518D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3102F1E4C46EC0042518D /* main.m */; };
+		4ED310331E4C46EC0042518D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310321E4C46EC0042518D /* AppDelegate.m */; };
+		4ED3103B1E4C46EC0042518D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED3103A1E4C46EC0042518D /* Assets.xcassets */; };
+		4ED310491E4C46EC0042518D /* Simple_CaculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310481E4C46EC0042518D /* Simple_CaculatorTests.m */; };
+		4ED310541E4C46EC0042518D /* Simple_CaculatorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310531E4C46EC0042518D /* Simple_CaculatorUITests.m */; };
+		4ED310751E4C47E80042518D /* Caculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310631E4C47E80042518D /* Caculator.m */; };
+		4ED310761E4C47E80042518D /* Operator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310651E4C47E80042518D /* Operator.m */; };
+		4ED310771E4C47E80042518D /* WTIRGBEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310681E4C47E80042518D /* WTIRGBEngine.m */; };
+		4ED310781E4C47E80042518D /* WTISimpleExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3106A1E4C47E80042518D /* WTISimpleExpression.m */; };
+		4ED310791E4C47E80042518D /* WTISimpleOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3106C1E4C47E80042518D /* WTISimpleOperation.m */; };
+		4ED3107A1E4C47E80042518D /* WTICaculatorStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3106E1E4C47E80042518D /* WTICaculatorStore.m */; };
+		4ED3107B1E4C47E80042518D /* WTISettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310701E4C47E80042518D /* WTISettingViewController.m */; };
+		4ED3107C1E4C47E80042518D /* WTISettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ED310711E4C47E80042518D /* WTISettingViewController.xib */; };
+		4ED3107D1E4C47E80042518D /* WTIMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED310731E4C47E80042518D /* WTIMainViewController.m */; };
+		4ED3107E1E4C47E80042518D /* WTIMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ED310741E4C47E80042518D /* WTIMainViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4ED310451E4C46EC0042518D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ED310231E4C46EC0042518D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ED3102A1E4C46EC0042518D;
+			remoteInfo = "Simple Caculator";
+		};
+		4ED310501E4C46EC0042518D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ED310231E4C46EC0042518D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ED3102A1E4C46EC0042518D;
+			remoteInfo = "Simple Caculator";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4E55B6961E51946E00324D05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4EB58E821E4CB54E001345B4 /* WTICoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTICoverView.h; sourceTree = "<group>"; };
+		4EB58E831E4CB54E001345B4 /* WTICoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTICoverView.m; sourceTree = "<group>"; };
+		4ED3102B1E4C46EC0042518D /* Simple Caculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Caculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ED3102F1E4C46EC0042518D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4ED310311E4C46EC0042518D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4ED310321E4C46EC0042518D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4ED3103A1E4C46EC0042518D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4ED3103F1E4C46EC0042518D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ED310441E4C46EC0042518D /* Simple CaculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple CaculatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ED310481E4C46EC0042518D /* Simple_CaculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Simple_CaculatorTests.m; sourceTree = "<group>"; };
+		4ED3104A1E4C46EC0042518D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ED3104F1E4C46EC0042518D /* Simple CaculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Simple CaculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ED310531E4C46EC0042518D /* Simple_CaculatorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Simple_CaculatorUITests.m; sourceTree = "<group>"; };
+		4ED310551E4C46EC0042518D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ED310611E4C47D50042518D /* Setting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
+		4ED310621E4C47E80042518D /* Caculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caculator.h; sourceTree = "<group>"; };
+		4ED310631E4C47E80042518D /* Caculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caculator.m; sourceTree = "<group>"; };
+		4ED310641E4C47E80042518D /* Operator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operator.h; sourceTree = "<group>"; };
+		4ED310651E4C47E80042518D /* Operator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operator.m; sourceTree = "<group>"; };
+		4ED310671E4C47E80042518D /* WTIRGBEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTIRGBEngine.h; path = ../../Caculator/Caculator/WTIRGBEngine.h; sourceTree = "<group>"; };
+		4ED310681E4C47E80042518D /* WTIRGBEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTIRGBEngine.m; path = ../../Caculator/Caculator/WTIRGBEngine.m; sourceTree = "<group>"; };
+		4ED310691E4C47E80042518D /* WTISimpleExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTISimpleExpression.h; path = ../../Caculator/Caculator/Assets.xcassets/WTISimpleExpression.h; sourceTree = "<group>"; };
+		4ED3106A1E4C47E80042518D /* WTISimpleExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTISimpleExpression.m; path = ../../Caculator/Caculator/Assets.xcassets/WTISimpleExpression.m; sourceTree = "<group>"; };
+		4ED3106B1E4C47E80042518D /* WTISimpleOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTISimpleOperation.h; path = ../../Caculator/Caculator/WTISimpleOperation.h; sourceTree = "<group>"; };
+		4ED3106C1E4C47E80042518D /* WTISimpleOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTISimpleOperation.m; path = ../../Caculator/Caculator/WTISimpleOperation.m; sourceTree = "<group>"; };
+		4ED3106D1E4C47E80042518D /* WTICaculatorStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTICaculatorStore.h; path = ../../Caculator/Caculator/WTICaculatorStore.h; sourceTree = "<group>"; };
+		4ED3106E1E4C47E80042518D /* WTICaculatorStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTICaculatorStore.m; path = ../../Caculator/Caculator/WTICaculatorStore.m; sourceTree = "<group>"; };
+		4ED3106F1E4C47E80042518D /* WTISettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTISettingViewController.h; path = ../../Caculator/Caculator/WTISettingViewController.h; sourceTree = "<group>"; };
+		4ED310701E4C47E80042518D /* WTISettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTISettingViewController.m; path = ../../Caculator/Caculator/WTISettingViewController.m; sourceTree = "<group>"; };
+		4ED310711E4C47E80042518D /* WTISettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WTISettingViewController.xib; path = ../../Caculator/Caculator/WTISettingViewController.xib; sourceTree = "<group>"; };
+		4ED310721E4C47E80042518D /* WTIMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTIMainViewController.h; path = ../../Caculator/Caculator/WTIMainViewController.h; sourceTree = "<group>"; };
+		4ED310731E4C47E80042518D /* WTIMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTIMainViewController.m; path = ../../Caculator/Caculator/WTIMainViewController.m; sourceTree = "<group>"; };
+		4ED310741E4C47E80042518D /* WTIMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WTIMainViewController.xib; path = ../../Caculator/Caculator/WTIMainViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4ED310281E4C46EC0042518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ED310411E4C46EC0042518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ED3104C1E4C46EC0042518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4ED310221E4C46EC0042518D = {
+			isa = PBXGroup;
+			children = (
+				4ED3102D1E4C46EC0042518D /* Simple Caculator */,
+				4ED310471E4C46EC0042518D /* Simple CaculatorTests */,
+				4ED310521E4C46EC0042518D /* Simple CaculatorUITests */,
+				4ED3102C1E4C46EC0042518D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4ED3102C1E4C46EC0042518D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4ED3102B1E4C46EC0042518D /* Simple Caculator.app */,
+				4ED310441E4C46EC0042518D /* Simple CaculatorTests.xctest */,
+				4ED3104F1E4C46EC0042518D /* Simple CaculatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4ED3102D1E4C46EC0042518D /* Simple Caculator */ = {
+			isa = PBXGroup;
+			children = (
+				4ED310661E4C47E80042518D /* Caculator */,
+				4ED310671E4C47E80042518D /* WTIRGBEngine.h */,
+				4ED310681E4C47E80042518D /* WTIRGBEngine.m */,
+				4ED310691E4C47E80042518D /* WTISimpleExpression.h */,
+				4ED3106A1E4C47E80042518D /* WTISimpleExpression.m */,
+				4ED3106B1E4C47E80042518D /* WTISimpleOperation.h */,
+				4ED3106C1E4C47E80042518D /* WTISimpleOperation.m */,
+				4ED3106D1E4C47E80042518D /* WTICaculatorStore.h */,
+				4ED3106E1E4C47E80042518D /* WTICaculatorStore.m */,
+				4ED3106F1E4C47E80042518D /* WTISettingViewController.h */,
+				4ED310701E4C47E80042518D /* WTISettingViewController.m */,
+				4ED310711E4C47E80042518D /* WTISettingViewController.xib */,
+				4ED310721E4C47E80042518D /* WTIMainViewController.h */,
+				4ED310731E4C47E80042518D /* WTIMainViewController.m */,
+				4ED310741E4C47E80042518D /* WTIMainViewController.xib */,
+				4EB58E821E4CB54E001345B4 /* WTICoverView.h */,
+				4EB58E831E4CB54E001345B4 /* WTICoverView.m */,
+				4ED3102E1E4C46EC0042518D /* Supporting Files */,
+			);
+			path = "Simple Caculator";
+			sourceTree = "<group>";
+		};
+		4ED3102E1E4C46EC0042518D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4ED3103A1E4C46EC0042518D /* Assets.xcassets */,
+				4ED310311E4C46EC0042518D /* AppDelegate.h */,
+				4ED310321E4C46EC0042518D /* AppDelegate.m */,
+				4E55B6961E51946E00324D05 /* LaunchScreen.storyboard */,
+				4ED3103F1E4C46EC0042518D /* Info.plist */,
+				4ED3102F1E4C46EC0042518D /* main.m */,
+				4ED310611E4C47D50042518D /* Setting.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4ED310471E4C46EC0042518D /* Simple CaculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				4ED310481E4C46EC0042518D /* Simple_CaculatorTests.m */,
+				4ED3104A1E4C46EC0042518D /* Info.plist */,
+			);
+			path = "Simple CaculatorTests";
+			sourceTree = "<group>";
+		};
+		4ED310521E4C46EC0042518D /* Simple CaculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4ED310531E4C46EC0042518D /* Simple_CaculatorUITests.m */,
+				4ED310551E4C46EC0042518D /* Info.plist */,
+			);
+			path = "Simple CaculatorUITests";
+			sourceTree = "<group>";
+		};
+		4ED310661E4C47E80042518D /* Caculator */ = {
+			isa = PBXGroup;
+			children = (
+				4ED310621E4C47E80042518D /* Caculator.h */,
+				4ED310631E4C47E80042518D /* Caculator.m */,
+				4ED310641E4C47E80042518D /* Operator.h */,
+				4ED310651E4C47E80042518D /* Operator.m */,
+			);
+			name = Caculator;
+			path = ../../Caculator/Caculator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4ED3102A1E4C46EC0042518D /* Simple Caculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ED310581E4C46EC0042518D /* Build configuration list for PBXNativeTarget "Simple Caculator" */;
+			buildPhases = (
+				4ED310271E4C46EC0042518D /* Sources */,
+				4ED310281E4C46EC0042518D /* Frameworks */,
+				4ED310291E4C46EC0042518D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Simple Caculator";
+			productName = "Simple Caculator";
+			productReference = 4ED3102B1E4C46EC0042518D /* Simple Caculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4ED310431E4C46EC0042518D /* Simple CaculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ED3105B1E4C46EC0042518D /* Build configuration list for PBXNativeTarget "Simple CaculatorTests" */;
+			buildPhases = (
+				4ED310401E4C46EC0042518D /* Sources */,
+				4ED310411E4C46EC0042518D /* Frameworks */,
+				4ED310421E4C46EC0042518D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ED310461E4C46EC0042518D /* PBXTargetDependency */,
+			);
+			name = "Simple CaculatorTests";
+			productName = "Simple CaculatorTests";
+			productReference = 4ED310441E4C46EC0042518D /* Simple CaculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4ED3104E1E4C46EC0042518D /* Simple CaculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ED3105E1E4C46EC0042518D /* Build configuration list for PBXNativeTarget "Simple CaculatorUITests" */;
+			buildPhases = (
+				4ED3104B1E4C46EC0042518D /* Sources */,
+				4ED3104C1E4C46EC0042518D /* Frameworks */,
+				4ED3104D1E4C46EC0042518D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ED310511E4C46EC0042518D /* PBXTargetDependency */,
+			);
+			name = "Simple CaculatorUITests";
+			productName = "Simple CaculatorUITests";
+			productReference = 4ED3104F1E4C46EC0042518D /* Simple CaculatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4ED310231E4C46EC0042518D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "吴韬";
+				TargetAttributes = {
+					4ED3102A1E4C46EC0042518D = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 7C95GKZ8KZ;
+					};
+					4ED310431E4C46EC0042518D = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 4ED3102A1E4C46EC0042518D;
+					};
+					4ED3104E1E4C46EC0042518D = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 4ED3102A1E4C46EC0042518D;
+					};
+				};
+			};
+			buildConfigurationList = 4ED310261E4C46EC0042518D /* Build configuration list for PBXProject "Simple Caculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4ED310221E4C46EC0042518D;
+			productRefGroup = 4ED3102C1E4C46EC0042518D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4ED3102A1E4C46EC0042518D /* Simple Caculator */,
+				4ED310431E4C46EC0042518D /* Simple CaculatorTests */,
+				4ED3104E1E4C46EC0042518D /* Simple CaculatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4ED310291E4C46EC0042518D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ED3107C1E4C47E80042518D /* WTISettingViewController.xib in Resources */,
+				4ED3107E1E4C47E80042518D /* WTIMainViewController.xib in Resources */,
+				4E55B6971E51946E00324D05 /* LaunchScreen.storyboard in Resources */,
+				4ED3103B1E4C46EC0042518D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ED310421E4C46EC0042518D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ED3104D1E4C46EC0042518D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4ED310271E4C46EC0042518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ED310331E4C46EC0042518D /* AppDelegate.m in Sources */,
+				4EB58E841E4CB54E001345B4 /* WTICoverView.m in Sources */,
+				4ED310761E4C47E80042518D /* Operator.m in Sources */,
+				4ED310771E4C47E80042518D /* WTIRGBEngine.m in Sources */,
+				4ED310301E4C46EC0042518D /* main.m in Sources */,
+				4ED3107D1E4C47E80042518D /* WTIMainViewController.m in Sources */,
+				4ED310791E4C47E80042518D /* WTISimpleOperation.m in Sources */,
+				4ED3107A1E4C47E80042518D /* WTICaculatorStore.m in Sources */,
+				4ED310781E4C47E80042518D /* WTISimpleExpression.m in Sources */,
+				4ED310751E4C47E80042518D /* Caculator.m in Sources */,
+				4ED3107B1E4C47E80042518D /* WTISettingViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ED310401E4C46EC0042518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ED310491E4C46EC0042518D /* Simple_CaculatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ED3104B1E4C46EC0042518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ED310541E4C46EC0042518D /* Simple_CaculatorUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4ED310461E4C46EC0042518D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ED3102A1E4C46EC0042518D /* Simple Caculator */;
+			targetProxy = 4ED310451E4C46EC0042518D /* PBXContainerItemProxy */;
+		};
+		4ED310511E4C46EC0042518D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ED3102A1E4C46EC0042518D /* Simple Caculator */;
+			targetProxy = 4ED310501E4C46EC0042518D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4ED310561E4C46EC0042518D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4ED310571E4C46EC0042518D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4ED310591E4C46EC0042518D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7C95GKZ8KZ;
+				INFOPLIST_FILE = "Simple Caculator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wootau.Simple-Caculator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4ED3105A1E4C46EC0042518D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7C95GKZ8KZ;
+				INFOPLIST_FILE = "Simple Caculator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wootau.Simple-Caculator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4ED3105C1E4C46EC0042518D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Simple CaculatorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wootau.Simple-CaculatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simple Caculator.app/Simple Caculator";
+			};
+			name = Debug;
+		};
+		4ED3105D1E4C46EC0042518D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Simple CaculatorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wootau.Simple-CaculatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simple Caculator.app/Simple Caculator";
+			};
+			name = Release;
+		};
+		4ED3105F1E4C46EC0042518D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Simple CaculatorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wootau.Simple-CaculatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Simple Caculator";
+			};
+			name = Debug;
+		};
+		4ED310601E4C46EC0042518D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Simple CaculatorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wootau.Simple-CaculatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Simple Caculator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4ED310261E4C46EC0042518D /* Build configuration list for PBXProject "Simple Caculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ED310561E4C46EC0042518D /* Debug */,
+				4ED310571E4C46EC0042518D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ED310581E4C46EC0042518D /* Build configuration list for PBXNativeTarget "Simple Caculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ED310591E4C46EC0042518D /* Debug */,
+				4ED3105A1E4C46EC0042518D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ED3105B1E4C46EC0042518D /* Build configuration list for PBXNativeTarget "Simple CaculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ED3105C1E4C46EC0042518D /* Debug */,
+				4ED3105D1E4C46EC0042518D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ED3105E1E4C46EC0042518D /* Build configuration list for PBXNativeTarget "Simple CaculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ED3105F1E4C46EC0042518D /* Debug */,
+				4ED310601E4C46EC0042518D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4ED310231E4C46EC0042518D /* Project object */;
+}
