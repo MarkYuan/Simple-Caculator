@@ -197,19 +197,18 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt0-cF-Y2Q">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt0-cF-Y2Q" userLabel="Clear History">
                                     <rect key="frame" x="25" y="585" width="140" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="140" id="aiI-Sp-CuF"/>
                                         <constraint firstAttribute="height" constant="20" id="m9Q-Jn-eK7"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                    <state key="normal" title="Clear Hestory">
+                                    <state key="normal" title="Clear History">
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="clearHestory:" destination="-1" eventType="touchUpInside" id="d4S-X9-SbQ"/>
-                                        <action selector="resetting:" destination="-1" eventType="touchUpInside" id="V8L-nC-WuV"/>
+                                        <action selector="clearHistory:" destination="-1" eventType="touchUpInside" id="Hvq-rc-JAj"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Wootau" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAf-vO-VOt">

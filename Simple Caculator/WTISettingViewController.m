@@ -338,11 +338,39 @@ static NSString *help = @"Simple Caculator calculates result automatically with 
     [mvc settingChanged: self.changedColor colorLevel: self.lastLevel.tag reverse: _colorReversed soundOn: _soundOn];
 }
 
-- (IBAction)clearHestory:(UIButton *)sender {
-    [[WTICaculatorStore shareString] clearHistory];
+- (IBAction)clearHistory:(UIButton *)sender
+{
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Clear History"
+                                                                   message: @"Are you sure to clear history?"
+                                                            preferredStyle: UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle: @"Cancel" style: UIAlertActionStyleCancel handler: nil];
+    UIAlertAction *clear = [UIAlertAction actionWithTitle: @"Clear" style: UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action){
+                                                          [[WTICaculatorStore shareString] clearHistory];
+                                                      }];
+    [alert addAction: cancel];
+    [alert addAction: clear];
+    [self presentViewController: alert animated:YES completion:nil];
 }
 
 - (IBAction)resetting:(UIButton *)sender
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Resetting"
+                                                                   message: @"Are you sure to reset Simple Caculator?"
+                                                            preferredStyle: UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle: @"Cancel" style: UIAlertActionStyleCancel handler: nil];
+    UIAlertAction *resetting = [UIAlertAction actionWithTitle: @"OK" style: UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action){[self reset];}];
+ 
+    [alert addAction: cancel];
+    [alert addAction: resetting];
+    [self presentViewController: alert animated:YES completion:nil];
+}
+
+- (void)reset
 {
     self.hueSlider.value = 0;
     self.saturateSlider.value = 0;
@@ -362,7 +390,6 @@ static NSString *help = @"Simple Caculator calculates result automatically with 
     [mvc settingChanged: backgroundColor colorLevel: DEFAULT_LEVEL reverse: NO soundOn: _soundOn];
     [self saveBackgroundImage];
 }
-
 
 #pragma mark - UIScrollView delegate
 
