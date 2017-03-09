@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E2BC4EC1E7188D300A32081 /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2BC4EB1E7188D300A32081 /* UIButton+EnlargeTouchArea.m */; };
 		4E55B6971E51946E00324D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E55B6961E51946E00324D05 /* LaunchScreen.storyboard */; };
 		4E6B08331E607AF700309132 /* WTICaculatorStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B08261E607AF700309132 /* WTICaculatorStore.m */; };
 		4E6B08351E607AF700309132 /* WTIMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B082A1E607AF700309132 /* WTIMainViewController.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E2BC4EA1E7188D300A32081 /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
+		4E2BC4EB1E7188D300A32081 /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
 		4E55B6961E51946E00324D05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E6B08251E607AF700309132 /* WTICaculatorStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTICaculatorStore.h; sourceTree = "<group>"; };
 		4E6B08261E607AF700309132 /* WTICaculatorStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTICaculatorStore.m; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				4E6B082B1E607AF700309132 /* WTIMainViewController.xib */,
 				4E6B08451E607B7D00309132 /* WTICoverView.h */,
 				4E6B08461E607B7D00309132 /* WTICoverView.m */,
+				4E2BC4EA1E7188D300A32081 /* UIButton+EnlargeTouchArea.h */,
+				4E2BC4EB1E7188D300A32081 /* UIButton+EnlargeTouchArea.m */,
 				4ED3102E1E4C46EC0042518D /* Supporting Files */,
 			);
 			path = "Simple Caculator";
@@ -330,6 +335,7 @@
 				4E6B08331E607AF700309132 /* WTICaculatorStore.m in Sources */,
 				4E6B08371E607AF700309132 /* WTIRGBEngine.m in Sources */,
 				4E6B08351E607AF700309132 /* WTIMainViewController.m in Sources */,
+				4E2BC4EC1E7188D300A32081 /* UIButton+EnlargeTouchArea.m in Sources */,
 				4E6B08381E607AF700309132 /* WTISettingViewController.m in Sources */,
 				4E6B08471E607B7D00309132 /* WTICoverView.m in Sources */,
 				4ED310301E4C46EC0042518D /* main.m in Sources */,

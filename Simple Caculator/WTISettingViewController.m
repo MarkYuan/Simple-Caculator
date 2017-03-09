@@ -11,6 +11,7 @@
 #import "WTICaculatorStore.h"
 #import "WTIRGBEngine.h"
 #import "Setting.h"
+#import "UIButton+EnlargeTouchArea.h"
 
 #define LEVEL_RADIUS 5
 #define HELP_LABEL_LAYOUT_DIVIDE 60
@@ -175,6 +176,8 @@ static NSString *help = @"Simple Caculator calculates result automatically with 
     [button.layer setBorderWidth: 1.0];
     [button.layer setBorderColor: colorref];
     [button.layer setCornerRadius: LEVEL_RADIUS];
+    
+    [button setEnlargeEdgeWithTop: 8.0 right: 8.0 bottom: 8.0 left: 8.0];
 }
 
 - (void)changeReverseButton
