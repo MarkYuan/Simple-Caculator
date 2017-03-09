@@ -29,10 +29,14 @@
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey: firstLunchKey];
     }
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     WTIMainViewController *mvc = [[WTIMainViewController alloc]
                                   initWithNibName: @"WTIMainViewController"

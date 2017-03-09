@@ -11,7 +11,6 @@
 #import "WTICaculatorStore.h"
 #import "WTIRGBEngine.h"
 #import "Setting.h"
-#import "UIButton+EnlargeTouchArea.h"
 
 #define LEVEL_RADIUS 5
 #define HELP_LABEL_LAYOUT_DIVIDE 60
@@ -109,6 +108,10 @@ static NSString *help = @"Simple Caculator calculates result automatically with 
     
     self.settingButton.alpha = 0.0;
     self.reverseSettingButton.alpha = 0.0;
+    [self.settingButton setEnlargeEdgeWithTop: 10.0 right: 10.0 bottom: 10.0 left: 10.0];
+    [self.reverseSettingButton setEnlargeEdgeWithTop: 10.0 right: 10.0 bottom: 10.0 left: 10.0];
+    
+    self.scrollView.delaysContentTouches = NO;
     
     _soundOn = [[NSUserDefaults standardUserDefaults] boolForKey: soundsOnKey];
     [self changeSoundsButtonTitle];
@@ -261,6 +264,28 @@ static NSString *help = @"Simple Caculator calculates result automatically with 
     [defaults synchronize];
 }
 
+- (IBAction)sliderValueChanged:(UISlider *)sender
+{
+    WTIMainViewController *mvc = [self rootController];
+    if (self.temporaryColor == nil || self.changedColor == nil) {
+        UIColor *backgroundColor = [self backgroundColor];
+        self.changedColor = WTIRGB(self.hueSlider.value, self.saturateSlider.value, self.brightSlider.value, 1.0, backgroundColor);
+    } else {
+        self.changedColor = WTIRGB(self.hueSlider.value, self.saturateSlider.value, self.brightSlider.value, 1.0, self.temporaryColor);
+    }
+    [mvc settingChanged: self.changedColor colorLevel: self.lastLevel.tag reverse: _colorReversed soundOn: _soundOn];
+}
+
+- (IBAction)levelButtonSelected: (UIButton *)sender
+{
+    self.lastLevel.selected = NO;
+    [self.lastLevel.layer setBorderWidth: 1.0];
+    self.lastLevel.backgroundColor = [UIColor clearColor];
+    [self changeLevelButton: sender];
+    
+    [self backgroundColorChanged];
+}
+
 - (IBAction)reverseColorChangeDirection: (UIButton *)sender
 {
     _colorReversed = !_colorReversed;
@@ -298,44 +323,19 @@ static NSString *help = @"Simple Caculator calculates result automatically with 
 
 - (IBAction)confirm: (UIButton *)sender
 {
-    if (self.brightSlider.value == self.brightSlider.maximumValue && self.lastLevel.tag == 0) {
-        return;
-    }
-    self.hueSlider.value = 0;
-    self.saturateSlider.value = 0;
-    self.brightSlider.value = 0;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Background Color"
+                                                                   message: @"Using the current background color?"
+                                                            preferredStyle: UIAlertControllerStyleAlert];
     
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-    [defaults setBool: _colorReversed forKey: colorReversedKey];
-    [defaults setInteger: self.lastLevel.tag forKey: colorLevelKey];
-    if (self.changedColor != nil) {
-        NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject: self.changedColor];
-        [defaults setObject: colorData forKey: backgroundColorKey];
-    }
-    [defaults synchronize];
-    [self saveBackgroundImage];
-}
-
-- (IBAction)levelButtonSelected: (UIButton *)sender
-{
-    self.lastLevel.selected = NO;
-    [self.lastLevel.layer setBorderWidth: 1.0];
-    self.lastLevel.backgroundColor = [UIColor clearColor];
-    [self changeLevelButton: sender];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle: @"Cancel" style: UIAlertActionStyleCancel handler: nil];
+    UIAlertAction *confirm = [UIAlertAction actionWithTitle: @"OK" style: UIAlertActionStyleDefault
+                                                    handler:^(UIAlertAction *action){
+                                                        [self confirmBackgroundColor];
+                                                    }];
+    [alert addAction: cancel];
+    [alert addAction: confirm];
     
-    [self backgroundColorChanged];
-}
-
-- (IBAction)sliderValueChanged:(UISlider *)sender
-{
-    WTIMainViewController *mvc = [self rootController];
-    if (self.temporaryColor == nil || self.changedColor == nil) {
-        UIColor *backgroundColor = [self backgroundColor];
-        self.changedColor = WTIRGB(self.hueSlider.value, self.saturateSlider.value, self.brightSlider.value, 1.0, backgroundColor);
-    } else {
-        self.changedColor = WTIRGB(self.hueSlider.value, self.saturateSlider.value, self.brightSlider.value, 1.0, self.temporaryColor);
-    }
-    [mvc settingChanged: self.changedColor colorLevel: self.lastLevel.tag reverse: _colorReversed soundOn: _soundOn];
+    [self presentViewController: alert animated:YES completion:nil];
 }
 
 - (IBAction)clearHistory:(UIButton *)sender
@@ -390,6 +390,27 @@ static NSString *help = @"Simple Caculator calculates result automatically with 
     [mvc settingChanged: backgroundColor colorLevel: DEFAULT_LEVEL reverse: NO soundOn: _soundOn];
     [self saveBackgroundImage];
 }
+
+- (void)confirmBackgroundColor
+{
+    if (self.brightSlider.value == self.brightSlider.maximumValue && self.lastLevel.tag == 0) {
+        return;
+    }
+    self.hueSlider.value = 0;
+    self.saturateSlider.value = 0;
+    self.brightSlider.value = 0;
+    
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    [defaults setBool: _colorReversed forKey: colorReversedKey];
+    [defaults setInteger: self.lastLevel.tag forKey: colorLevelKey];
+    if (self.changedColor != nil) {
+        NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject: self.changedColor];
+        [defaults setObject: colorData forKey: backgroundColorKey];
+    }
+    [defaults synchronize];
+    [self saveBackgroundImage];
+}
+
 
 #pragma mark - UIScrollView delegate
 

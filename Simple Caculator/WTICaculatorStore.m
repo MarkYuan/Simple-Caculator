@@ -566,7 +566,7 @@
             [tempExpression insertString: @"." atIndex: 1];
             double exValue = [tempExpression doubleValue];
             tempExpression = [NSMutableString stringWithFormat: @"%.9lg", exValue];
-            [tempExpression appendFormat: @"×10ⁿ%ld", i];
+            [tempExpression appendFormat: @"×10ⁿ%ld", (long)i];
         }
         
         if (minusExist) {
