@@ -716,7 +716,7 @@ CGFloat labelButtomMargin(CGFloat buttonHeight)
     CGFloat buttomMargin = labelButtomMargin(length);
     self.backView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     self.settingButton.frame = CGRectMake(SETTING_H_DIVIDER, SETTING_V_DIVIDER, SETTING_LENGTH, SETTING_LENGTH);
-    [self.settingButton setEnlargeEdgeWithTop: 10.0 right: 10.0 bottom: 10.0 left: 10.0];
+    [self.settingButton setEnlargeEdgeWithTop: 20.0 right: 20.0 bottom: 20.0 left: 20.0];
     
     [self adjustLocationWithButton: self.zeroButton     row: 0 column: 0 width: length height: length inSize: screenSize];
     [self adjustLocationWithButton: self.pointButton    row: 0 column: 1 width: length height: length inSize: screenSize];

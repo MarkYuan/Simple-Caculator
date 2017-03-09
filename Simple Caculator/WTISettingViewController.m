@@ -108,8 +108,8 @@ static NSString *help = @"Simple Caculator calculates result automatically with 
     
     self.settingButton.alpha = 0.0;
     self.reverseSettingButton.alpha = 0.0;
-    [self.settingButton setEnlargeEdgeWithTop: 10.0 right: 10.0 bottom: 10.0 left: 10.0];
-    [self.reverseSettingButton setEnlargeEdgeWithTop: 10.0 right: 10.0 bottom: 10.0 left: 10.0];
+    [self.settingButton setEnlargeEdgeWithTop: 20.0 right: 20.0 bottom: 20.0 left: 20.0];
+    [self.reverseSettingButton setEnlargeEdgeWithTop: 20.0 right: 20.0 bottom: 20.0 left: 20.0];
     
     self.scrollView.delaysContentTouches = NO;
     
