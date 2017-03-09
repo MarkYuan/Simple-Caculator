@@ -334,7 +334,7 @@ CGFloat labelButtomMargin(CGFloat buttonHeight)
     [self.resultCoverView resignFirstResponder];
     if (gestureRecognizer.state == UIGestureRecognizerStateChanged && !duringPan) {
         CGPoint location = [gestureRecognizer translationInView: self.resultCoverView];
-        if (fabs(location.x) > 20 || fabs(location.y) > 20) {
+        if (fabs(location.x) > 10 || fabs(location.y) > 10) {
             if (fabs(location.x) > fabs(location.y)) {
                 if (location.x > 0) {
                     [self animataionAndOperationForSwipeRight];
