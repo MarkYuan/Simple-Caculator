@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E01CB7E1E72AD500068BC66 /* NSDecimalNumber+Rounding.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E01CB7D1E72AD500068BC66 /* NSDecimalNumber+Rounding.m */; };
 		4E2BC4EC1E7188D300A32081 /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2BC4EB1E7188D300A32081 /* UIButton+EnlargeTouchArea.m */; };
 		4E55B6971E51946E00324D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E55B6961E51946E00324D05 /* LaunchScreen.storyboard */; };
 		4E6B08331E607AF700309132 /* WTICaculatorStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B08261E607AF700309132 /* WTICaculatorStore.m */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E01CB7C1E72AD500068BC66 /* NSDecimalNumber+Rounding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Rounding.h"; sourceTree = "<group>"; };
+		4E01CB7D1E72AD500068BC66 /* NSDecimalNumber+Rounding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Rounding.m"; sourceTree = "<group>"; };
 		4E2BC4EA1E7188D300A32081 /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
 		4E2BC4EB1E7188D300A32081 /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
 		4E55B6961E51946E00324D05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				4E6B08461E607B7D00309132 /* WTICoverView.m */,
 				4E2BC4EA1E7188D300A32081 /* UIButton+EnlargeTouchArea.h */,
 				4E2BC4EB1E7188D300A32081 /* UIButton+EnlargeTouchArea.m */,
+				4E01CB7C1E72AD500068BC66 /* NSDecimalNumber+Rounding.h */,
+				4E01CB7D1E72AD500068BC66 /* NSDecimalNumber+Rounding.m */,
 				4ED3102E1E4C46EC0042518D /* Supporting Files */,
 			);
 			path = "Simple Caculator";
@@ -330,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E01CB7E1E72AD500068BC66 /* NSDecimalNumber+Rounding.m in Sources */,
 				4E6B08401E607B0300309132 /* Caculator.m in Sources */,
 				4ED310331E4C46EC0042518D /* AppDelegate.m in Sources */,
 				4E6B08331E607AF700309132 /* WTICaculatorStore.m in Sources */,

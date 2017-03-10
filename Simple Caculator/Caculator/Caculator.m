@@ -14,22 +14,30 @@
 {
     NSString *description;
     if (self.type == TYPE_NUMBER) {
-        description = [NSString stringWithFormat: @"%Lf",self.number];
+        description = [NSString stringWithFormat: @"%@",self.number];
     } else if (self.type == TYPE_OPERATOR){
         description = [NSString stringWithFormat: @"%c", self.symbol];
     } else if (self.type == TYPE_ERROR) {
-        if (self.error == RESULT_ERROR_DIVICED_ZERO) {
-            description = @"Division by zero";
-        } else if (self.error == RESULT_ERROR_ROOT_ZERO) {
-            description = @"Open root by zero";
-        } else if (self.error == RESULT_ERROR_NEGATIVE_OPENROOT) {
-            description = @"Negative open root";
-        } else if (self.error == RESULT_ERROR_INFINITY) {
-            description = @"Positive infinity";
-        } else if (self.error == RESULT_ERROR_NEGATIVE_INFINITY) {
-            description = @"Negative infinity";
+        switch (self.error) {
+            case RESULT_ERROR_DIVICED_ZERO:
+                description = @"Division by zero";
+                break;
+            case RESULT_ERROR_ROOT_ZERO:
+                description = @"Open root by zero";
+                break;
+            case RESULT_ERROR_NEGATIVE_OPENROOT:
+                description = @"Negative open root";
+                break;
+            case RESULT_ERROR_OVER_FLOW:
+                description = @"Number is too big";
+                break;
+            case RESULT_ERROR_UNDER_FLOW:
+                description = @"Number is too small";
+                break;
+            default:
+                description = @"Unknow error";
+                break;
         }
-        return @"Unknow error";
     } else {
         description = @"TerminalPoint";
     }

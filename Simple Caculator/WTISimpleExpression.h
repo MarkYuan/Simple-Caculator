@@ -11,8 +11,8 @@
 
 @interface WTISimpleExpression : NSObject
 
-- (NSString *)formatOutputResult: (long double)result;
 - (void)addProtectionCaculator: (NSMutableArray *)caculatorsArray;
 - (NSMutableArray *)induceCaculatorsFromString: (NSString *)expression;
+- (NSString *)formatOutputResult: (NSDecimalNumber *)decimalNumber rounded: (BOOL)rounded;
 
 @end

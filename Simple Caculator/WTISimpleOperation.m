@@ -165,7 +165,7 @@
 
                 Caculator *errorCau = [subCaculatorsArray firstObject];
                 if (errorCau.error) {
-                    [self.recursionString setString: [self checkError: errorCau.error]];
+                    [self.recursionString setString: errorCau.description];
                      return;
                 } else {
                     [subCaculatorsArray removeObjectAtIndex: 0];
@@ -185,11 +185,14 @@
     [self caculateBasicCaculatorsArray: caculatorsArray];
     Caculator *errorCau = [caculatorsArray firstObject];
     if (errorCau.error) {
-        [self.recursionString setString: [self checkError: errorCau.error]];
+        [self.recursionString setString: errorCau.description];
         return;
     }
+    
     Caculator *resultCau = [caculatorsArray objectAtIndex: 1];
-    [self.recursionString setString: [self.simpleExpression formatOutputResult: resultCau.number]];
+    self.currentNumber = [resultCau.number copy];
+    [self.recursionString setString: [self.simpleExpression formatOutputResult: resultCau.number
+                                                                       rounded: errorCau.rounded]];
 }
 
 - (void)caculateBasicCaculatorsArray: (NSMutableArray *)subCaculatorsArray
@@ -245,22 +248,6 @@
             }
         }
     } while(!finish);
-}
-
-- (NSString *)checkError: (ErrorType)errorType
-{
-    if (errorType == RESULT_ERROR_DIVICED_ZERO) {
-        return @"Division by zero";
-    } else if (errorType == RESULT_ERROR_ROOT_ZERO) {
-        return @"Open root by zero";
-    } else if (errorType == RESULT_ERROR_NEGATIVE_OPENROOT) {
-        return @"Negative open root";
-    } else if (errorType == RESULT_ERROR_INFINITY) {
-        return @"Positive infinity";
-    } else if (errorType == RESULT_ERROR_NEGATIVE_INFINITY) {
-        return @"Negative infinity";
-    }
-    return @"Unknow error";
 }
 
 @end

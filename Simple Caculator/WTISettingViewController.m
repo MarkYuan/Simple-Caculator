@@ -362,7 +362,7 @@ static NSString *help = @"Simple Caculator calculates result automatically with 
                                                             preferredStyle: UIAlertControllerStyleAlert];
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle: @"Cancel" style: UIAlertActionStyleCancel handler: nil];
-    UIAlertAction *resetting = [UIAlertAction actionWithTitle: @"OK" style: UIAlertActionStyleDefault
+    UIAlertAction *resetting = [UIAlertAction actionWithTitle: @"Reset" style: UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction *action){[self reset];}];
  
     [alert addAction: cancel];

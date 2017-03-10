@@ -506,6 +506,11 @@
     return tempExpression;
 }
 
+- (void)caculateWithLastExpression
+{
+    [self cleanUpAndCaculatePasteExpression: self.simpleOperation.currentNumber.stringValue];
+}
+
 - (void)cleanUpAndCaculatePasteExpression: (NSString *)expression
 {
     NSMutableString *tempExpression = [NSMutableString stringWithString: expression];
@@ -513,29 +518,43 @@
     BOOL finished = NO;
     BOOL pointExist = NO;
     BOOL minusExist = NO;
+    BOOL digitExist = NO;
     
     do {
         NSInteger length = [tempExpression length];
         if (i < length) {
             NSString *subChar = [tempExpression substringWithRange: NSMakeRange(i, 1)];
-            if (![@"0123456789ⁿe×" containsString: subChar]) {
-                if ([subChar isEqualToString: @"."]) {
-                    if (pointExist == NO) {
-                        pointExist = YES;
-                        i++;
-                    }
-                } else {
-                    if ([subChar isEqualToString: @"-"]) {
-                        minusExist = YES;
-                    }
-                    finished = NO;
-                    [tempExpression deleteCharactersInRange: NSMakeRange(i, 1)];
+            if ([@"0123456789" containsString: subChar]) {
+                if (digitExist == NO) {
+                    digitExist = YES;
                 }
+                i++;
             } else if ([@"e" isEqualToString: subChar]) {
                 [tempExpression replaceCharactersInRange: NSMakeRange(i, 1) withString: @"×10ⁿ"];
                 i += 3;
-            } else {
+            } else if ([@"ⁿ×" containsString: subChar]) {
                 i++;
+            } else if ([@"." isEqualToString: subChar]) {
+                if (pointExist == NO) {
+                    pointExist = YES;
+                    if (digitExist == NO) {
+                        [tempExpression insertString: @"0" atIndex: i];
+                        i += 2;
+                    } else {
+                        i++;                    }
+                } else {
+                    [tempExpression deleteCharactersInRange: NSMakeRange(i, 1)];
+                }
+
+            } else if ([@"-" isEqualToString: subChar]) {
+                if (digitExist == NO) {
+                    minusExist = YES;
+                    i++;
+                } else {
+                    [tempExpression deleteCharactersInRange: NSMakeRange(i, 1)];
+                }
+            } else {
+                [tempExpression deleteCharactersInRange: NSMakeRange(i, 1)];
             }
         } else {
             finished = YES;

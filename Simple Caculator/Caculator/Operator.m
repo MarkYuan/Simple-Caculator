@@ -7,6 +7,7 @@
 //
 
 #import "Operator.h"
+#import "Setting.h"
 
 @implementation Operator
 
@@ -120,38 +121,42 @@
                  result: (Caculator *)caculator
                   error: (Caculator *)error
 {
-    caculator.type = TYPE_NUMBER;
-    long double divice = 100.0;
-    caculator.number = lastCaculator.number / divice;
-    [self infinityCheck: caculator error: error];
+    NSDecimal lastNumber = lastCaculator.number.decimalValue;
+    NSDecimal nextNumber = [NSDecimalNumber decimalNumberWithString: @"100.0"].decimalValue;
+    NSDecimal result;
+    
+    NSCalculationError cAError = NSDecimalDivide(&result, &lastNumber, &nextNumber, NSRoundBankers);
+    [self saveOperation: result caculator: caculator error: error errorType: cAError];
 }
 
 - (void)rootingCaculateBase: (Caculator *)nextCaculator
                      result: (Caculator *)caculator
                       error: (Caculator *)error
 {
-    if (nextCaculator.number >= 0) {
+    if ([nextCaculator.number doubleValue] >= 0) {
         caculator.type = TYPE_NUMBER;
-        caculator.number = sqrt(nextCaculator.number);
+        double baseNumber = [nextCaculator.number doubleValue];
+        double result = sqrt(baseNumber);
+        [self saveOperation: result caculator: caculator error: error];
     } else {
         error.type = TYPE_ERROR;
         error.error = RESULT_ERROR_NEGATIVE_OPENROOT;
     }
-    [self infinityCheck: caculator error: error];
 }
 
 - (void)reverseRootingCaculateBase: (Caculator *)nextCaculator
                             result: (Caculator *)caculator
                              error: (Caculator *)error
 {
-    if (nextCaculator.number >= 0) {
+    if ([nextCaculator.number doubleValue] >= 0) {
         caculator.type = TYPE_NUMBER;
-        caculator.number = -sqrt(nextCaculator.number);
+        double baseNumber = [nextCaculator.number doubleValue];
+        double result = -sqrt(baseNumber);
+        [self saveOperation: result caculator: caculator error: error];
     } else {
         error.type = TYPE_ERROR;
         error.error = RESULT_ERROR_NEGATIVE_OPENROOT;
     }
-    [self infinityCheck: caculator error: error];
 }
 
 - (void)rootsCaculateWithRoot: (Caculator *)lastCaculator
@@ -159,17 +164,19 @@
                         result: (Caculator *)caculator
                         error: (Caculator *)error
 {
-    if (lastCaculator.number == 0){
+    if (![lastCaculator.number compare: [NSDecimalNumber zero]]){
         error.type = TYPE_ERROR;
         error.error = RESULT_ERROR_ROOT_ZERO;
-    } else if (nextCaculator.number >= 0) {
+    } else if ([nextCaculator.number doubleValue] >= 0) {
         caculator.type = TYPE_NUMBER;
-        caculator.number = pow(nextCaculator.number, 1 / lastCaculator.number);
-    } else if (nextCaculator.number < 0) {
+        double baseNumber = [nextCaculator.number doubleValue];
+        double rootNumber = [lastCaculator.number doubleValue];
+        double result = pow(baseNumber, 1 / rootNumber);
+        [self saveOperation: result caculator: caculator error: error];
+    } else if ([nextCaculator.number doubleValue] < 0) {
         error.type = TYPE_ERROR;
         error.error = RESULT_ERROR_NEGATIVE_OPENROOT;
     }
-    [self infinityCheck: caculator error: error];
 }
 
 - (void)powerCaculateWithExponent: (Caculator *)nextCaculator
@@ -178,8 +185,26 @@
                             error: (Caculator *)error
 {
     caculator.type = TYPE_NUMBER;
-    caculator.number = powl(lastCaculator.number, nextCaculator.number);
-    [self infinityCheck: caculator error: error];
+
+    if ([nextCaculator.number.stringValue containsString: @"."]) {
+        double baseNumber = [lastCaculator.number doubleValue];
+        double powerNumber = [nextCaculator.number doubleValue];
+        double result = pow(baseNumber, powerNumber);
+        [self saveOperation: result caculator: caculator error: error];
+    } else {
+        NSDecimal baseNumber;
+        NSDecimal lastNumber = lastCaculator.number.decimalValue;
+        if ([nextCaculator.number doubleValue] < 0 && [lastCaculator.number compare: [NSDecimalNumber zero]]) {
+            NSDecimal one = [NSDecimalNumber decimalNumberWithString: @"1"].decimalValue;
+            NSDecimalDivide(&baseNumber, &one, &lastNumber, NSRoundBankers);
+        } else {
+            baseNumber = lastNumber;
+        }
+        NSUInteger powerNumber = (NSUInteger)fabs([nextCaculator.number doubleValue]);
+        NSDecimal result;
+        NSCalculationError cAError = NSDecimalPower(&result, &baseNumber, powerNumber, NSRoundBankers);
+        [self saveOperation: result caculator: caculator error: error errorType: cAError];
+    }
 }
 
 - (void)multiplyCaculateWith: (Caculator *)lastCaculator
@@ -187,9 +212,12 @@
                       result: (Caculator *)caculator
                        error: (Caculator *)error
 {
-    caculator.type = TYPE_NUMBER;
-    caculator.number = lastCaculator.number * nextCaculator.number;
-    [self infinityCheck: caculator error: error];
+    NSDecimal lastNumber = lastCaculator.number.decimalValue;
+    NSDecimal nextNumber = nextCaculator.number.decimalValue;
+    NSDecimal result;
+    
+    NSCalculationError cAError = NSDecimalMultiply(&result, &lastNumber, &nextNumber, NSRoundBankers);
+    [self saveOperation: result caculator: caculator error: error errorType: cAError];
 }
 
 - (void)divideCaculateWith: (Caculator *)lastCaculator
@@ -197,14 +225,12 @@
                     result: (Caculator *)caculator
                      error: (Caculator *)error
 {
-    if (nextCaculator.number != 0) {
-        caculator.type = TYPE_NUMBER;
-        caculator.number = lastCaculator.number / nextCaculator.number;
-    } else {
-        error.type = TYPE_ERROR;
-        error.error = RESULT_ERROR_DIVICED_ZERO;
-    }
-    [self infinityCheck: caculator error: error];
+    NSDecimal lastNumber = lastCaculator.number.decimalValue;
+    NSDecimal nextNumber = nextCaculator.number.decimalValue;
+    NSDecimal result;
+    
+    NSCalculationError cAError = NSDecimalDivide(&result, &lastNumber, &nextNumber, NSRoundBankers);
+    [self saveOperation: result caculator: caculator error: error errorType: cAError];
 }
 
 - (void)plusCaculateWith: (Caculator *)lastCaculator
@@ -212,18 +238,24 @@
                   result: (Caculator *)caculator
                    error: (Caculator *)error
 {
-    caculator.type = TYPE_NUMBER;
-    caculator.number = lastCaculator.number + nextCaculator.number;
-    [self infinityCheck: caculator error: error];
+    NSDecimal lastNumber = lastCaculator.number.decimalValue;
+    NSDecimal nextNumber = nextCaculator.number.decimalValue;
+    NSDecimal result;
+    
+    NSCalculationError cAError = NSDecimalAdd(&result, &lastNumber, &nextNumber, NSRoundBankers);
+    [self saveOperation: result caculator: caculator error: error errorType: cAError];
 }
 
 - (void)reverseCaculateWith: (Caculator *)nextCaculator
                      result: (Caculator *)caculator
                       error: (Caculator *)error
 {
-    caculator.type = TYPE_NUMBER;
-    caculator.number = - nextCaculator.number;
-    [self infinityCheck: caculator error: error];
+    NSDecimal lastNumber = [NSDecimalNumber zero].decimalValue;
+    NSDecimal nextNumber = nextCaculator.number.decimalValue;
+    NSDecimal result;
+    
+    NSCalculationError cAError = NSDecimalSubtract(&result, &lastNumber, &nextNumber, NSRoundBankers);
+    [self saveOperation: result caculator: caculator error: error errorType: cAError];
 }
 
 - (void)minusCaculateWith: (Caculator *)lastCaculator
@@ -231,20 +263,62 @@
                    result: (Caculator *)caculator
                     error: (Caculator *)error
 {
-    caculator.type = TYPE_NUMBER;
-    caculator.number = lastCaculator.number - nextCaculator.number;
-    [self infinityCheck: caculator error: error];
+    NSDecimal lastNumber = lastCaculator.number.decimalValue;
+    NSDecimal nextNumber = nextCaculator.number.decimalValue;
+    NSDecimal result;
+    
+    NSCalculationError cAError = NSDecimalMultiply(&result, &lastNumber, &nextNumber, NSRoundBankers);
+    [self saveOperation: result caculator: caculator error: error errorType: cAError];
 }
 
-- (void)infinityCheck: (Caculator *)caculator error: (Caculator *)error
+
+#pragma mark - Saving & Error Check
+
+- (void)saveOperation: (double)result caculator: (Caculator *)caculator error: (Caculator *)error
 {
-    if (caculator.number == INFINITY) {
+    if (result < [NSDecimalNumber maximumDecimalNumber].doubleValue &&
+        result > [NSDecimalNumber minimumDecimalNumber].doubleValue) {
+        NSDecimalNumber *currentNumber = [NSDecimalNumber decimalNumberWithDecimal:
+                                          [NSNumber numberWithDouble: result].decimalValue];
+        caculator.number = [NSDecimalNumber roundingDecimalNumber: currentNumber scale: 11];
+        if ([currentNumber compare: caculator.number]) {
+            error.rounded = YES;
+        }
+    } else {
         error.type = TYPE_ERROR;
-        error.error = RESULT_ERROR_INFINITY;
-    } else if (caculator.number == -INFINITY) {
-        error.type = TYPE_ERROR;
-        error.error = RESULT_ERROR_NEGATIVE_INFINITY;
+        error.error = RESULT_ERROR_OVER_FLOW;
     }
 }
+
+- (void)saveOperation: (NSDecimal)decimal caculator: (Caculator *)caculator error: (Caculator *)error errorType: (NSCalculationError)cAError
+{
+    switch (cAError) {
+        case NSCalculationNoError:
+            caculator.type = TYPE_NUMBER;
+            caculator.number = [NSDecimalNumber decimalNumberWithDecimal: decimal];
+            break;
+        case NSCalculationLossOfPrecision:
+            caculator.type = TYPE_NUMBER;
+            caculator.number = [NSDecimalNumber decimalNumberWithDecimal: decimal];
+            break;
+        case NSCalculationUnderflow:
+            error.type = TYPE_ERROR;
+            error.error = RESULT_ERROR_UNDER_FLOW;
+            break;
+        case NSCalculationOverflow:
+            error.type = TYPE_ERROR;
+            error.error = RESULT_ERROR_OVER_FLOW;
+            break;
+        case NSCalculationDivideByZero:
+            error.type = TYPE_ERROR;
+            error.error = RESULT_ERROR_DIVICED_ZERO;
+            break;
+        default:
+            caculator.type = TYPE_NUMBER;
+            caculator.number = [NSDecimalNumber decimalNumberWithDecimal: decimal];
+            break;
+    }
+}
+
 
 @end

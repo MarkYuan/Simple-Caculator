@@ -16,6 +16,7 @@
 - (void)clearAll;
 - (void)reverseAll;
 - (void)countdownAll;
+- (void)caculateWithLastExpression;
 - (void)cleanUpAndCaculatePasteExpression: (NSString *)paste;
 - (void)inputDigitAndSymbolWithTag: (NSUInteger)tag;
 + (instancetype)shareString;

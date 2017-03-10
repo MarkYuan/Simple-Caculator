@@ -11,6 +11,8 @@
 
 @interface WTISimpleOperation : NSObject
 
+@property (nonatomic, strong) NSDecimalNumber *currentNumber;
+
 - (NSString *)evaulateExpression: (NSString *)expression;
 
 @end

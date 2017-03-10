@@ -381,7 +381,7 @@ CGFloat labelButtomMargin(CGFloat buttonHeight)
         [self displayWithSoundID: 1318];
         [self.caculatorStore removeUnuselessOperator];
         [self.caculatorStore resettingOperatorAndExpression];
-        [self.caculatorStore cleanUpAndCaculatePasteExpression: self.resultLabel.text];
+        [self.caculatorStore caculateWithLastExpression];
         [self animationForSeperateLineTime: 0.15];
         [self animationForExpressionLabelDynamic: YES distance: 30 time: 0.15];
         [self animationForResultLabelIfRefresh: 3 Type: frame_y distance: 30 time: 0.15 toOtherSide: NO alphaChanged: YES dynamic:NO];

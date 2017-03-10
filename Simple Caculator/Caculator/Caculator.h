@@ -18,16 +18,17 @@ typedef enum {
 
 typedef enum {
     RESULT_CORRECT,
+    RESULT_ERROR_OVER_FLOW,
+    RESULT_ERROR_UNDER_FLOW,
     RESULT_ERROR_DIVICED_ZERO,
     RESULT_ERROR_ROOT_ZERO,
     RESULT_ERROR_NEGATIVE_OPENROOT,
-    RESULT_ERROR_INFINITY,
-    RESULT_ERROR_NEGATIVE_INFINITY,
 }ErrorType;
 
 @interface Caculator : NSObject
 
-@property (assign, nonatomic)long double number;
+@property (strong, nonatomic)NSDecimalNumber *number;
+@property (assign, nonatomic)BOOL rounded;
 @property (assign, nonatomic)unichar symbol;
 @property (assign, nonatomic)ErrorType error;
 @property (assign, nonatomic)CaculatorType type;
