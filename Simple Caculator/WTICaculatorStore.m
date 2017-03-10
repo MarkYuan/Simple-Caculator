@@ -508,7 +508,25 @@
 
 - (void)caculateWithLastExpression
 {
-    [self cleanUpAndCaculatePasteExpression: self.simpleOperation.currentNumber.stringValue];
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    numberFormatter.exponentSymbol = @"e";
+
+    NSString *expression = self.simpleOperation.currentNumber.stringValue;
+    if ([expression containsString: @"."]) {
+        NSInteger pointLoc = [expression rangeOfString: @"."].location;
+        NSString *digitString = [expression substringToIndex: pointLoc];
+        if (digitString.length > 18) {
+            numberFormatter.numberStyle = NSNumberFormatterScientificStyle;
+            numberFormatter.maximumFractionDigits = 10;
+        }
+    } else {
+        if (expression.length > 18) {
+            numberFormatter.numberStyle = NSNumberFormatterScientificStyle;
+            numberFormatter.maximumFractionDigits = 10;
+        }
+    }
+    
+    [self cleanUpAndCaculatePasteExpression: [numberFormatter stringFromNumber: self.simpleOperation.currentNumber]];
 }
 
 - (void)cleanUpAndCaculatePasteExpression: (NSString *)expression

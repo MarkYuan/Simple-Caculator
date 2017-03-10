@@ -105,35 +105,40 @@
 
 - (NSString *)formatOutputResult: (NSDecimalNumber *)decimalNumber rounded: (BOOL)rounded
 {
-    double result = [decimalNumber doubleValue];
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     numberFormatter.roundingMode = NSNumberFormatterRoundHalfUp;
     numberFormatter.roundingIncrement = @0.00000000000000001;
     numberFormatter.exponentSymbol = @"#e";
-    numberFormatter.formatWidth = 18;
-    numberFormatter.maximumFractionDigits = 17;
-    if (result >= 1 || result <= -1) {
-        NSString *scientificString = [NSString stringWithFormat: @"%.19lg", result];
-        if ([scientificString containsString: @"e"]) {
-            numberFormatter.numberStyle = NSNumberFormatterScientificStyle;
-            numberFormatter.maximumFractionDigits = 10;
-        }
-    }
     
     NSDecimalNumber *outputNumber = [decimalNumber copy];
     NSString *pointString = decimalNumber.stringValue;
     if ([pointString containsString: @"."]) {
         NSInteger pointLoc = [pointString rangeOfString: @"."].location;
+        NSString *digitString = [pointString substringToIndex: pointLoc];
+        if (digitString.length > 18) {
+            numberFormatter.numberStyle = NSNumberFormatterScientificStyle;
+            numberFormatter.maximumFractionDigits = 10;
+        }
+        if (numberFormatter.maximumFractionDigits != 10 && 18 - pointLoc >= 0) {
+            numberFormatter.maximumFractionDigits = 18 - pointLoc;
+        }
         if (pointString.length >= 39) {
             short decimalLen = pointString.length - pointLoc - 2;
             outputNumber = [NSDecimalNumber roundingDecimalNumber: outputNumber scale: decimalLen];
         }
+    } else {
+        if (pointString.length > 18) {
+            numberFormatter.numberStyle = NSNumberFormatterScientificStyle;
+            numberFormatter.maximumFractionDigits = 10;
+        }
     }
-      
+    
     NSMutableString *decimalString = [NSMutableString stringWithString: outputNumber.stringValue];
+    BOOL pointExist = NO;
     BOOL approximatelyEqualneeded = rounded;
     if ([decimalString containsString: @"."]) {
+        pointExist = YES;
         NSInteger pointLoc = [decimalString rangeOfString: @"."].location;
         [decimalString deleteCharactersInRange: NSMakeRange(0, pointLoc + 1)];
         if (decimalString.length > 17) {
@@ -149,21 +154,20 @@
     }
     
     NSMutableString *outputString = [NSMutableString stringWithString: [numberFormatter stringFromNumber: outputNumber]];
-    [outputString replaceOccurrencesOfString: @" "
-                                  withString: @""
-                                     options: NSCaseInsensitiveSearch
-                                       range: NSMakeRange(0, outputString.length)];
     [outputString replaceOccurrencesOfString: @"#"
                                   withString: @" "
                                      options: NSCaseInsensitiveSearch
                                        range: NSMakeRange(0, outputString.length)];
-    if (![outputString containsString: @"."]) {
+
+    if (outputNumber.stringValue.length > 19 && pointExist) {
+        approximatelyEqualneeded = YES;
+    }
+    if (!pointExist) {
         [outputString insertString: @" " atIndex: 0];
     }
     if (approximatelyEqualneeded) {
         [outputString insertString: @"≈" atIndex: 0];
     }
-    
     return outputString;
 }
 

@@ -16,7 +16,7 @@
 #import "Setting.h"
 
 #define DIVIDER 1
-#define EX_HEIGHT 30
+#define EX_HEIGHT 32
 #define EX_DIVIDER 5
 #define RST_HEIGHT 75
 #define RES_COVER_HEIGHT 90
@@ -153,7 +153,7 @@ CGFloat labelButtomMargin(CGFloat buttonHeight)
     if (colorReversed) {direction = -1;} else {direction = 1;};
     CGFloat hOffset = H_OFFSET * colorLevel * LEVEL_RADIO * direction;
     CGFloat sOffset = S_OFFSET * colorLevel * LEVEL_RADIO * direction;
-    CGFloat bOffset = B_OFFSET * colorLevel * LEVEL_RADIO * direction;
+    CGFloat bOffset = B_OFFSET * colorLevel * LEVEL_RADIO * labs(direction);
     UIColor *gradientColor = WTIRGB(hOffset, sOffset, bOffset, 1.0, backgroundColor);
     self.gradientLayer.colors = @[(__bridge id)backgroundColor.CGColor,(__bridge id)gradientColor.CGColor];
 }
