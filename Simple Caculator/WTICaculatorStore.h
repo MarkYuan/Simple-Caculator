@@ -37,11 +37,14 @@
 - (BOOL)backToLastExpression;
 - (BOOL)returnToNextOperator;
 - (BOOL)returnToNextExpression;
-- (BOOL)symbolExistWith: (NSString *)expression;
+- (BOOL)appendExpressionCheck: (NSString *)expression;
 - (NSString *)redundantSymbolCleanUp: (NSString *)expression;
 
 - (void)removeUnuselessOperator;
 - (void)resettingOperatorAndExpression;
 
+- (NSMutableArray *)historyModels;
+- (void)historySecletedAtIndexPath: (NSIndexPath *)indexPath;
+- (void)deleteHistoryAtIndexPath: (NSIndexPath *)indexPath;
 
 @end

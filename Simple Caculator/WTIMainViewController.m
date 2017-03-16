@@ -21,13 +21,6 @@
 #define RST_HEIGHT 75
 #define RES_COVER_HEIGHT 90
 
-typedef enum {
-    frame_x,
-    frame_y,
-    frame_width,
-    frame_height,
-} FrameType;
-
 @interface WTIMainViewController ()
 
 @property (assign, nonatomic) BOOL soundsOn;
@@ -117,8 +110,10 @@ CGFloat labelButtomMargin(CGFloat buttonHeight)
     if ([defaults boolForKey: firstLunchKey]) {
         [defaults setBool: YES forKey: soundsOnKey];
         [defaults setBool: NO forKey: colorReversedKey];
+        [defaults setBool: NO forKey: historyCloseKey];
+        [defaults setBool: YES forKey: historyViewHiddenKey];
         [defaults setInteger: DEFAULT_LEVEL forKey: colorLevelKey];
-        UIColor *backgroundColor = UICOLOR(150, 140, 125, 1.0);
+        UIColor *backgroundColor = DEFAULT_COLOR;
         NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject: backgroundColor];
         [defaults setObject: colorData forKey: backgroundColorKey];
         [defaults synchronize];
@@ -152,10 +147,13 @@ CGFloat labelButtomMargin(CGFloat buttonHeight)
     NSInteger direction;
     if (colorReversed) {direction = -1;} else {direction = 1;};
     CGFloat hOffset = H_OFFSET * colorLevel * LEVEL_RADIO * direction;
-    CGFloat sOffset = S_OFFSET * colorLevel * LEVEL_RADIO * direction;
-    CGFloat bOffset = B_OFFSET * colorLevel * LEVEL_RADIO * labs(direction);
+    CGFloat sOffset = S_OFFSET * colorLevel * LEVEL_RADIO;
+    CGFloat bOffset = B_OFFSET * colorLevel * LEVEL_RADIO;
     UIColor *gradientColor = WTIRGB(hOffset, sOffset, bOffset, 1.0, backgroundColor);
     self.gradientLayer.colors = @[(__bridge id)backgroundColor.CGColor,(__bridge id)gradientColor.CGColor];
+    
+    [self refreshLabelText];
+    [self refreshButtonsStatus];
 }
 
 - (UIImage *)backgroundImage
@@ -224,6 +222,7 @@ CGFloat labelButtomMargin(CGFloat buttonHeight)
     
     WTISettingViewController *svc = [[WTISettingViewController alloc] init];
     svc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [svc reload];
     [self presentViewController: svc animated: YES completion:^{
         svc.settingButton.alpha = 1.0;
         self.settingButton.alpha = 0.0;
@@ -241,7 +240,7 @@ CGFloat labelButtomMargin(CGFloat buttonHeight)
     
     [self.caculatorStore removeUnuselessOperator];
     [self.caculatorStore resettingOperatorAndExpression];
-    if ([self.caculatorStore symbolExistWith: self.expressionLabel.text]) {
+    if ([self.caculatorStore appendExpressionCheck: self.expressionLabel.text]) {
         [self.caculatorStore appendOpreators: self.expressionLabel.text];
     } else {
         [self.caculatorStore replaceOpreators: self.expressionLabel.text];
@@ -382,6 +381,8 @@ CGFloat labelButtomMargin(CGFloat buttonHeight)
         [self.caculatorStore removeUnuselessOperator];
         [self.caculatorStore resettingOperatorAndExpression];
         [self.caculatorStore caculateWithLastExpression];
+        [self.caculatorStore appendOpreators: self.expressionLabel.text];
+        [self.caculatorStore appendExpression: self.expressionLabel.text];
         [self animationForSeperateLineTime: 0.15];
         [self animationForExpressionLabelDynamic: YES distance: 30 time: 0.15];
         [self animationForResultLabelIfRefresh: 3 Type: frame_y distance: 30 time: 0.15 toOtherSide: NO alphaChanged: YES dynamic:NO];

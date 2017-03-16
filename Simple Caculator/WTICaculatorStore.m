@@ -7,21 +7,23 @@
 //
 
 #import "WTICaculatorStore.h"
-#import "Setting.h"
 #import "WTISimpleOperation.h"
+#import "WTIHistoryModel.h"
+#import "WTIString.h"
+#import "Setting.h"
 
 @interface WTICaculatorStore()
-{
-    BOOL _lastExpression;
-    NSInteger _operatorIndex;
-    NSInteger _expressionIndex;
-}
 
-@property (strong, nonatomic) WTISimpleOperation *simpleOperation;
-@property (strong, nonatomic) NSMutableString *expressionString;
-@property (strong, nonatomic) NSMutableString *trendResultString;
-@property (strong, nonatomic) NSMutableArray *operatorsArray;
-@property (strong, nonatomic) NSMutableArray *expressionArray;
+@property (nonatomic, strong) WTIString *currentOperation;
+@property (nonatomic, strong) WTIString *currentExpression;
+
+@property (nonatomic, strong) WTIHistoryModel *currentHistoryModel;
+@property (nonatomic, strong) WTISimpleOperation *simpleOperation;
+@property (nonatomic, strong) NSMutableString *expressionString;
+@property (nonatomic, strong) NSMutableString *trendResultString;
+@property (nonatomic, strong) NSMutableArray *operatorsArray;
+@property (nonatomic, strong) NSMutableArray *expressionArray;
+@property (nonatomic, strong) NSMutableArray *historyModelArray;
 
 @end
 
@@ -31,17 +33,26 @@
 {
     self = [super init];
     if (self) {
+        WTIString *placeHolder = [[WTIString alloc] initWithString: @""];
+        _operatorsArray = [[NSMutableArray alloc] initWithObjects: placeHolder, nil];
+        
         _simpleOperation = [[WTISimpleOperation alloc] init];
         _expressionString = [[NSMutableString alloc] init];
+        
         _trendResultString = [[NSMutableString alloc] initWithString: @"0"];
-        _expressionArray = [NSKeyedUnarchiver unarchiveObjectWithFile: [self historyPathAtDocuments]];
-        _operatorsArray = [[NSMutableArray alloc] init];
+        _expressionArray = [NSKeyedUnarchiver unarchiveObjectWithFile: [self expressionPathAtDocuments]];
+        _historyModelArray = [NSKeyedUnarchiver unarchiveObjectWithFile: [self historyPathAtDocuments]];
+        
         if (_expressionArray == nil) {
             _expressionArray = [[NSMutableArray alloc] init];
         }
-        _lastExpression = NO;
-        _operatorIndex = 0;
-        _expressionIndex = 0;
+        
+        if (_historyModelArray == nil) {
+            WTIHistoryModel *historyModel = [[WTIHistoryModel alloc] init];
+            historyModel.dateString = [self currentDay];
+            _historyModelArray = [[NSMutableArray alloc] initWithObjects: historyModel, nil];
+        }
+        _currentHistoryModel = [_historyModelArray firstObject];
     }
     return self;
 }
@@ -65,96 +76,203 @@
 
 #pragma mark - History
 
-- (void)appendExpression: (NSString *)expression
-{
-    if ([self.expressionArray count]) {
-        NSString *lastExpression = [self.expressionArray lastObject];
-        if (![lastExpression isEqualToString: expression]) {
-            [self.expressionArray addObject: [expression copy]];
-        }
-    } else {
-        [self.expressionArray addObject: [expression copy]];
-    }
-}
-
-- (void)appendOpreators: (NSString *)expression
-{
-    if ([self.operatorsArray count]) {
-        NSString *lastOperator = [self.operatorsArray lastObject];
-        if (![lastOperator isEqualToString: expression]) {
-            [self.operatorsArray addObject: [expression copy]];
-        }
-    } else {
-        [self.operatorsArray addObject: [expression copy]];
-    }
-}
-
-- (void)replaceOpreators: (NSString *)expression
-{
-    [self.operatorsArray replaceObjectAtIndex: self.operatorsArray.count - 1 withObject: [expression copy]];
-}
-
 - (void)clearHistory
 {
-    [self.operatorsArray removeAllObjects];
+    self.currentExpression = nil;
+    self.currentHistoryModel = nil;
+    
     [self.expressionArray removeAllObjects];
-    [self clearAll];
+    [self.historyModelArray removeAllObjects];
+    
     NSFileManager *fileMgr = [NSFileManager defaultManager];
-    BOOL bRet = [fileMgr fileExistsAtPath: [self historyPathAtDocuments]];
-    if (bRet) {
+    
+    BOOL hisExist = [fileMgr fileExistsAtPath: [self historyPathAtDocuments]];
+    BOOL expExist = [fileMgr fileExistsAtPath: [self expressionPathAtDocuments]];
+    
+    if (hisExist) {
         NSError *err;
-        [fileMgr removeItemAtPath: [self historyPathAtDocuments] error:&err];
+        [fileMgr removeItemAtPath: [self historyPathAtDocuments] error: &err];
+    }
+    if (expExist) {
+        NSError *err;
+        [fileMgr removeItemAtPath: [self expressionPathAtDocuments] error: &err];
     }
 }
 
 - (void)saveData
 {
-    if (self.operatorsArray.count) {
-        NSString *lastOperation = [self.operatorsArray lastObject];
-        if (self.expressionArray.count) {
-            NSString *lastExpression = [self.expressionArray lastObject];
-            if (![lastOperation isEqualToString: lastExpression] && lastOperation.length) {
-                [self.expressionArray addObject: [lastOperation copy]];
+    WTIString *firstOperator = [self.operatorsArray firstObject];
+    [self appendExpression: firstOperator.string];
+
+    [NSKeyedArchiver archiveRootObject: self.historyModelArray toFile: [self historyPathAtDocuments]];
+    [NSKeyedArchiver archiveRootObject: self.expressionArray toFile: [self expressionPathAtDocuments]];
+}
+
+- (void)appendExpression: (NSString *)expression
+{
+    if (![[NSUserDefaults standardUserDefaults] boolForKey: historyCloseKey]) {
+        if ([self symbolExistWith: expression]) {
+            if ([self.expressionArray count]) {
+                WTIString *firstExpression = [self.expressionArray firstObject];
+                if (![firstExpression.string isEqualToString: expression]) {
+                    WTIString *newExpression = [[WTIString alloc] initWithString: expression];
+                    [self.expressionArray insertObject: newExpression atIndex: 0];
+                    [self appendHistory: expression];
+                }
+            } else {
+                WTIString *newExpression = [[WTIString alloc] initWithString: expression];
+                [self.expressionArray insertObject: newExpression atIndex: 0];
+                [self appendHistory: expression];
             }
         }
     }
-    [NSKeyedArchiver archiveRootObject: self.expressionArray toFile: [self historyPathAtDocuments]];
+}
+
+- (void)appendOpreators: (NSString *)expression
+{
+    WTIString *firstOperator = [self.operatorsArray firstObject];
+    if (![firstOperator.string isEqualToString: expression]) {
+        WTIString *newOperator = [[WTIString alloc] initWithString: expression];
+        [self.operatorsArray insertObject: newOperator atIndex: 0];
+    }
+}
+
+- (void)appendHistory: (NSString *)expression
+{
+    NSMutableString *tempString = [NSMutableString stringWithString: self.trendResultString];
+    [tempString replaceOccurrencesOfString: @" "
+                                withString: @""
+                                   options: NSCaseInsensitiveSearch
+                                     range: NSMakeRange(0, [tempString length])];
+    [tempString replaceOccurrencesOfString: @"≈"
+                                withString: @""
+                                   options: NSCaseInsensitiveSearch
+                                     range: NSMakeRange(0, [tempString length])];
+    [tempString replaceOccurrencesOfString: @","
+                                withString: @""
+                                   options: NSCaseInsensitiveSearch
+                                     range: NSMakeRange(0, [tempString length])];
+    NSString *historyString = [expression stringByAppendingFormat: @" = %@", tempString];
+    
+    if ([self.currentHistoryModel.dateString isEqualToString: [self currentDay]]) {
+        [self.currentHistoryModel.expressionArray insertObject: [historyString copy] atIndex: 0];
+    } else {
+        WTIHistoryModel *historyModel = [[WTIHistoryModel alloc] init];
+        historyModel.dateString = [self currentDay];
+        [historyModel.expressionArray insertObject: [historyString copy] atIndex: 0];
+        self.currentHistoryModel = historyModel;
+        [self.historyModelArray insertObject: historyModel atIndex: 0];
+    }
+}
+
+- (void)historySecletedAtIndexPath: (NSIndexPath *)indexPath
+{
+    NSInteger count = 0;
+    for (NSInteger i = 0; i < indexPath.section; i++) {
+        WTIHistoryModel *historyModel = [self.historyModelArray objectAtIndex: i];
+        count += historyModel.expressionArray.count;
+    }
+    count += indexPath.row;
+    WTIString *selectedExpression = [self.expressionArray objectAtIndex: count];
+    [self caculatePasteExpression: selectedExpression.string];
+    [self removeUnuselessOperator];
+    [self resettingOperatorAndExpression];
+}
+
+- (void)deleteHistoryAtIndexPath: (NSIndexPath *)indexPath
+{
+    NSInteger count = 0;
+    for (NSInteger i = 0; i < indexPath.section; i++) {
+        WTIHistoryModel *historyModel = [self.historyModelArray objectAtIndex: i];
+        count += historyModel.expressionArray.count;
+    }
+    count += indexPath.row;
+    
+    if (self.currentExpression != nil) {
+        NSInteger index = [self.expressionArray indexOfObject: self.currentExpression];
+        if (index == count) {
+            if (index < [self.expressionArray count] - 1) {
+                WTIString *deleteExpression = [self.expressionArray objectAtIndex: index + 1];
+                self.currentExpression = deleteExpression;
+                [self.expressionString setString: self.currentExpression.string];
+            } else if (index > 0) {
+                WTIString *deleteExpression = [self.expressionArray objectAtIndex: index - 1];
+                self.currentExpression = deleteExpression;
+                [self.expressionString setString: self.currentExpression.string];
+            } else {
+                WTIString *deleteExpression = [self.operatorsArray lastObject];
+                [self.expressionString setString: deleteExpression.string];
+                self.currentExpression = nil;
+            }
+            [self caculateUpToLength];
+        }
+    }
+    
+    [self.expressionArray removeObjectAtIndex: count];
+    
+    WTIHistoryModel *historyModel = [self.historyModelArray objectAtIndex: indexPath.section];
+    [historyModel.expressionArray removeObjectAtIndex: indexPath.row];
+    
+    if (historyModel.expressionArray.count == 0) {
+        [self.historyModelArray removeObject: historyModel];
+        if (historyModel == self.currentHistoryModel) {
+            self.currentHistoryModel = nil;
+        }
+    }
+}
+
+- (void)replaceOpreators: (NSString *)expression
+{
+    WTIString *replaceExpression = [[WTIString alloc] initWithString: expression];
+    [self.operatorsArray replaceObjectAtIndex: 0 withObject: replaceExpression];
+}
+
+- (NSMutableArray *)historyModels
+{
+    return self.historyModelArray;
+}
+
+- (NSString *)currentDay
+{
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY.MM.dd"];
+    return [formatter stringFromDate:date];
 }
 
 - (NSString *)historyPathAtDocuments
+{
+    NSString *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    NSString *path = [documents stringByAppendingPathComponent:@"history.archiver"];
+    return path;
+}
+
+- (NSString *)expressionPathAtDocuments
 {
     NSString *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     NSString *path = [documents stringByAppendingPathComponent:@"expression.archiver"];
     return path;
 }
 
+
+#pragma mark - History Manager
+
 - (BOOL)backToLastOperator
 {
-    NSInteger count = [self.operatorsArray count];
-    if (_operatorIndex < count - 1 && _expressionIndex == 0) {
-        _operatorIndex ++;
-        [self.expressionString setString: [self.operatorsArray objectAtIndex: count - _operatorIndex - 1]];
-        if (self.expressionString.length) {
-            [self doSimpleOperaction];
+    if ([self.operatorsArray count] > 1) {
+        if (self.currentOperation == nil) {
+            self.currentOperation = [self.operatorsArray objectAtIndex: 1];
+            [self.expressionString setString: self.currentOperation.string];
         } else {
-            [self clearAll];
+            NSInteger index = [self.operatorsArray indexOfObject: self.currentOperation];
+            if (index < [self.operatorsArray count] - 1) {
+                self.currentOperation = [self.operatorsArray objectAtIndex: index + 1];
+                [self.expressionString setString: self.currentOperation.string];
+            } else {
+                return NO;
+            }
         }
-        return YES;
-    }
-    return NO;
-}
-
-- (BOOL)backToLastExpression
-{
-    NSInteger count = [self.expressionArray count];
-    if (_expressionIndex < count) {
-        _expressionIndex ++;
-        [self.expressionString setString: [self.expressionArray objectAtIndex: count - _expressionIndex]];
-        if (self.expressionString.length) {
-            [self doSimpleOperaction];
-        } else {
-            [self clearAll];
-        }
+        [self caculateUpToLength];
         return YES;
     }
     return NO;
@@ -162,78 +280,89 @@
 
 - (BOOL)returnToNextOperator
 {
-    NSInteger count = [self.operatorsArray count];
-    if (_lastExpression) {
-        _lastExpression = NO;
-        if (self.operatorsArray.count) {
-            [self.expressionString setString: [self.operatorsArray objectAtIndex: count - _operatorIndex - 1]];
-            if (self.expressionString.length) {
-                [self doSimpleOperaction];
-            } else {
-                [self clearAll];
-            }
-            return YES;
-        }
-        return NO;
-    }
-    if (_operatorIndex < count && _operatorIndex > 0) {
-        _operatorIndex --;
-        [self.expressionString setString: [self.operatorsArray objectAtIndex: count - _operatorIndex - 1]];
-        if (self.expressionString.length) {
-            [self doSimpleOperaction];
+    if (self.currentOperation == nil) {
+        if (self.currentExpression != nil) {
+            self.currentOperation = [self.operatorsArray lastObject];
+            [self.expressionString setString: self.currentOperation.string];
         } else {
-            [self clearAll];
+            return NO;
         }
-        return YES;
+    } else {
+        NSInteger index = [self.operatorsArray indexOfObject: self.currentOperation];
+        if (index > 0) {
+            self.currentOperation = [self.operatorsArray objectAtIndex: index - 1];
+            [self.expressionString setString: self.currentOperation.string];
+        } else {
+            return NO;
+        }
     }
-    return NO;
+    [self caculateUpToLength];
+    return YES;
+}
+
+- (BOOL)backToLastExpression
+{
+    if (self.currentExpression == nil) {
+        if ([self.expressionArray count] != 0) {
+            self.currentExpression = [self.expressionArray firstObject];
+            [self.expressionString setString: self.currentExpression.string];
+        } else {
+            return NO;
+        }
+    } else {
+        NSInteger index = [self.expressionArray indexOfObject: self.currentExpression];
+        if (index < [self.expressionArray count] - 1) {
+            self.currentExpression = [self.expressionArray objectAtIndex: index + 1];
+            [self.expressionString setString: self.currentExpression.string];
+        } else {
+            return NO;
+        }
+    }
+    [self caculateUpToLength];
+    return YES;
 }
 
 - (BOOL)returnToNextExpression
 {
-    NSInteger count = [self.expressionArray count];
-    if (_expressionIndex <= count && _expressionIndex > 1) {
-        _expressionIndex --;
-        [self.expressionString setString: [self.expressionArray objectAtIndex: count - _expressionIndex]];
-        if (self.expressionString.length) {
-            [self doSimpleOperaction];
+    if (self.currentExpression != nil) {
+        NSInteger index = [self.expressionArray indexOfObject: self.currentExpression];
+        if (index > 0) {
+            self.currentExpression = [self.expressionArray objectAtIndex: index - 1];
+            [self.expressionString setString: self.currentExpression.string];
         } else {
-            [self clearAll];
+            return NO;
         }
+        [self caculateUpToLength];
         return YES;
-    }
-    if (_expressionIndex == 1) {
-//        if (self.operatorsArray.count) {
-//            _operatorIndex = self.operatorsArray.count - 1;
-//            _expressionIndex = 0;
-//        }
-        _expressionIndex = 0;
-        _lastExpression = YES;
     }
     return NO;
 }
 
 - (void)resettingOperatorAndExpression
 {
-    if (_operatorIndex != 0 || _expressionIndex != 0) {
-        _operatorIndex = 0;
-        _expressionIndex = 0;
-    }
+    self.currentOperation = nil;
+    self.currentExpression = nil;
 }
 
 - (void)removeUnuselessOperator
 {
-    if (_expressionIndex) {
+    if (self.currentExpression != nil) {
         return;
     }
-    if (_operatorIndex > 0) {
-        NSInteger count = [self.operatorsArray count];
-        if (count - _operatorIndex > 0) {
-            [_operatorsArray removeObjectsInRange: NSMakeRange(count - _operatorIndex, _operatorIndex)];
-        }
+    if (self.currentOperation != nil) {
+        NSInteger index = [self.operatorsArray indexOfObject: self.currentOperation];
+        [self.operatorsArray removeObjectsInRange: NSMakeRange(0, index)];
     }
 }
 
+- (void)caculateUpToLength
+{
+    if (self.expressionString.length) {
+        [self doSimpleOperaction];
+    } else {
+        [self clearAll];
+    }
+}
 
 #pragma mark - Tap Events
 
@@ -935,8 +1064,20 @@
 
 - (BOOL)symbolExistWith: (NSString *)expression
 {
+    for (NSInteger i = 0; i < [expression length]; i++) {
+        NSString *subString = [expression substringWithRange: NSMakeRange(i, 1)];
+        if (![@"0123456789." containsString: subString]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)appendExpressionCheck: (NSString *)expression
+{
     if ([self.operatorsArray count] > 0) {
-        NSString *lastExpression = [self.operatorsArray lastObject];
+        WTIString *lastStr = [self.operatorsArray lastObject];
+        NSString *lastExpression = lastStr.string;
         if ([expression containsString: lastExpression]) {
             NSRange sameRange = [expression rangeOfString: lastExpression];
             NSMutableString *tempExpression = [NSMutableString stringWithString: expression];
@@ -964,7 +1105,7 @@
 
 - (BOOL)duringBrowseHistory
 {
-    if (_operatorIndex != 0 || _expressionIndex != 0) {
+    if (self.currentOperation != nil || self.currentExpression != nil) {
         return YES;
     }
     return NO;

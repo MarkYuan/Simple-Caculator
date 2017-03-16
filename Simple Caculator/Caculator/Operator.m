@@ -267,7 +267,7 @@
     NSDecimal nextNumber = nextCaculator.number.decimalValue;
     NSDecimal result;
     
-    NSCalculationError cAError = NSDecimalMultiply(&result, &lastNumber, &nextNumber, NSRoundBankers);
+    NSCalculationError cAError = NSDecimalSubtract(&result, &lastNumber, &nextNumber, NSRoundBankers);
     [self saveOperation: result caculator: caculator error: error errorType: cAError];
 }
 

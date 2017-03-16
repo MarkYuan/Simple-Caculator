@@ -19,16 +19,18 @@
 #define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 
+#define DEFAULT_COLOR [UIColor colorWithRed: 40 / 255.0 green: 35 / 255.0 blue: 100 / 255.0 alpha: 1.0];
+
 #define SETTING_LENGTH 30
 #define SETTING_H_DIVIDER 24
 #define SETTING_V_DIVIDER 26
 
-#define H_OFFSET -0.28
+#define H_OFFSET -0.28571429
 #define S_OFFSET 0.1
 #define B_OFFSET -0.2
 #define LEVEL_RADIO 0.25
 
-#define DEFAULT_LEVEL 7
+#define DEFAULT_LEVEL 3
 
 static NSString * const soundsOnKey = @"soundsOnKey";
 static NSString * const backgroundColorKey = @"backgroundColorKey";
@@ -38,6 +40,8 @@ static NSString * const levelButtonRadiusKey = @"levelButtonRadiusKey";
 static NSString * const colorLevelKey = @"colorLevelKey";
 static NSString * const colorReversedKey = @"colorReversedKey";
 static NSString * const expressonArrayKey = @"expressonArrayKey";
+static NSString * const historyViewHiddenKey = @"historyViewHiddenKey";
+static NSString * const historyCloseKey = @"historyCloseKey";
 
 typedef enum {
     zero,
@@ -63,5 +67,12 @@ typedef enum {
     rightBracket,
     point
 } wButton;
+
+typedef enum {
+    frame_x,
+    frame_y,
+    frame_width,
+    frame_height,
+} FrameType;
 
 #endif /* Setting_h */

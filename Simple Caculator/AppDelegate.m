@@ -17,7 +17,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
@@ -33,15 +32,14 @@
     return YES;
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
+    
     WTIMainViewController *mvc = [[WTIMainViewController alloc]
                                   initWithNibName: @"WTIMainViewController"
                                   bundle: nil];
-    
     self.window.rootViewController = mvc;
     self.window.backgroundColor = [UIColor clearColor];
     [self.window makeKeyAndVisible];
@@ -50,6 +48,7 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
+    NSLog(@"1");
     [[WTICaculatorStore shareString] saveData];
 }
 

@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *settingButton;
 
+- (void)reload;
+
 @end
