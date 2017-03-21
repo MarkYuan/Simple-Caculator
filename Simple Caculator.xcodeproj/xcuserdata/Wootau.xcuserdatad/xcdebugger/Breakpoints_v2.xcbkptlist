@@ -135,7 +135,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "484"
             endingLineNumber = "484"
-            landmarkName = "-clearAll"
+            landmarkName = "-removeLastCharacter"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -151,8 +151,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "483"
             endingLineNumber = "483"
-            landmarkName = "@implementation WTICaculatorStore"
-            landmarkType = "3">
+            landmarkName = "-removeLastCharacter"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -167,8 +167,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "486"
             endingLineNumber = "486"
-            landmarkName = "-clearAll"
-            landmarkType = "7">
+            landmarkName = "@implementation WTICaculatorStore"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

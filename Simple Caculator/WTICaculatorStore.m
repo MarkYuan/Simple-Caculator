@@ -19,8 +19,10 @@
 
 @property (nonatomic, strong) WTIHistoryModel *currentHistoryModel;
 @property (nonatomic, strong) WTISimpleOperation *simpleOperation;
+
 @property (nonatomic, strong) NSMutableString *expressionString;
 @property (nonatomic, strong) NSMutableString *trendResultString;
+
 @property (nonatomic, strong) NSMutableArray *operatorsArray;
 @property (nonatomic, strong) NSMutableArray *expressionArray;
 @property (nonatomic, strong) NSMutableArray *historyModelArray;
@@ -642,11 +644,12 @@
 
     NSString *expression = self.simpleOperation.currentNumber.stringValue;
     if ([expression containsString: @"."]) {
-        NSInteger pointLoc = [expression rangeOfString: @"."].location;
-        NSString *digitString = [expression substringToIndex: pointLoc];
-        if (digitString.length > 18) {
+        if (expression.length > 18) {
             numberFormatter.numberStyle = NSNumberFormatterScientificStyle;
             numberFormatter.maximumFractionDigits = 10;
+        } else {
+            numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+            numberFormatter.maximumFractionDigits = 18;
         }
     } else {
         if (expression.length > 18) {

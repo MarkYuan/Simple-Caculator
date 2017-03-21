@@ -214,12 +214,7 @@ static NSString *historyHolderClosed = @"Open history function to record answers
     [self.settingButton         setEnlargeEdgeWithTop: 20.0 right: 20.0 bottom: 20.0 left: 20.0];
     [self.reverseSettingButton  setEnlargeEdgeWithTop: 20.0 right: 20.0 bottom: 20.0 left: 20.0];
     [self.resettingButton       setEnlargeEdgeWithTop: 5.0  right: 5.0  bottom: 5.0 left: 5.0];
-    [self.historyButton         setEnlargeEdgeWithTop: 5.0  right: 5.0  bottom: 5.0 left: 0];
-    [self.backHistoryButton     setEnlargeEdgeWithTop: 5.0  right: 5.0  bottom: 5.0 left: 0];
-    [self.soundButton           setEnlargeEdgeWithTop: 5.0  right: 5.0  bottom: 5.0 left: 0];
-    [self.backgroundColorButton setEnlargeEdgeWithTop: 5.0  right: 5.0  bottom: 5.0 left: 0];
     [self.closeHistoryButton    setEnlargeEdgeWithTop: 5.0  right: 5.0  bottom: 5.0 left: 0];
-    [self.resettingButton       setEnlargeEdgeWithTop: 5.0  right: 5.0  bottom: 5.0 left: 0];
     [self.editButton            setEnlargeEdgeWithTop: 5.0  right: 5.0  bottom: 5.0 left: 0];
     [self.clearAllButton        setEnlargeEdgeWithTop: 5.0  right: 5.0  bottom: 5.0 left: 0];
 }
